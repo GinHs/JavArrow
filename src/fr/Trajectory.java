@@ -14,9 +14,6 @@ public class Trajectory {
 		while(this.arrow.getY()<500 || this.arrow.getX()<500 ) {
 		this.arrow.setX((x1-x2)*t+x0);
 		this.arrow.setY(-5*t*t+(y1-y2)*t+characterheight);
-		for(int i=0;i<5000;i++) {
-			
-		}
 		t++;
 		
 		}
