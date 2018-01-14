@@ -15,7 +15,7 @@ public class Character {
 		this.x = x;
 		this.y = y;
 		this.height = HEIGHT_PER_DEFAULT;
-		this.nbWin = 10;
+		this.nbWin = 100;
 	}
 	
 	public boolean isReach(float x, float y) {
