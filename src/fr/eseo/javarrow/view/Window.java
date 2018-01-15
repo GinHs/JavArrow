@@ -1,4 +1,4 @@
-package fr;
+package fr.eseo.javarrow.view;
 import java.awt.BorderLayout;
 
 import java.awt.Dimension;

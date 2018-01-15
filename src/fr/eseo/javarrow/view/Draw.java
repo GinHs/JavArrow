@@ -1,4 +1,4 @@
-package fr;
+package fr.eseo.javarrow.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,7 +13,6 @@ import java.util.List;
 import javax.swing.JPanel;
 
 import fr.eseo.javarrow.controller.Controler;
-import fr.eseo.javarrow.view.ViewArrow;
 
 
 

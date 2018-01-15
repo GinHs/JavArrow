@@ -6,7 +6,9 @@ import java.util.List;
 
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
-import fr.Window;
+
+import fr.eseo.javarrow.controller.Controler;
+import fr.eseo.javarrow.view.Window;
 
 public class Action extends AbstractAction{
 	public static final String NAME_ACTION = "Action";
