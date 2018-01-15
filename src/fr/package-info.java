@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author corentin
- *
- */
-package fr;

@@ -1,7 +1,10 @@
-package fr;
+package fr.eseo.javarrow.model;
 
 public class Character {
 
+	/**
+	 * Properties of the Character
+	 */
 	public String name;
 	public float x;
 	public float y;
@@ -9,6 +12,12 @@ public class Character {
 	public int nbWin;
 	public static final float HEIGHT_PER_DEFAULT = 10;
 
+	/**
+	 * Constructor
+	 * @param name
+	 * @param x
+	 * @param y
+	 */
 	public Character(String name, float x, float y) {
 		super();
 		this.name = name;
@@ -18,14 +27,19 @@ public class Character {
 		this.nbWin = 0;
 	}
 	
+	/**
+	 * Function to determine if the arrow reached the character
+	 * @param x
+	 * @param y
+	 * @return True or False
+	 */
 	public boolean isReach(float x, float y) {
 		return (x >= this.getX()) && (y == this.getY()) && (x <= this.getHeight());
-		
 	}
 	
 	
 	/**
-	 * Setters and getters 
+	 * Setters and getters to get properties
 	 */
 	public String getName() {
 		return name;

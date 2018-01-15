@@ -1,5 +1,7 @@
 package fr;
-import java.io.*; 
+import java.io.*;
+
+import fr.eseo.javarrow.model.Arrow; 
 
 public class Trajectory {
 	
