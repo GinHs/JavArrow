@@ -9,10 +9,10 @@ import javax.swing.JOptionPane;
 import fr.Window;
 
 public class Action extends AbstractAction{
-	public static final String NOM_ACTION = "Action";
+	public static final String NAME_ACTION = "Action";
 
 	public Action() {
-		super(NOM_ACTION);
+		super(NAME_ACTION);
 	}
 
 	@Override

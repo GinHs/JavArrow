@@ -69,7 +69,7 @@ public abstract class Controler implements MouseListener,MouseMotionListener{
 	}
 
 		
-	public void associer(Draw panneau){
+	public void associate(Draw draw){
 			this.getDraw().setControler(this);
 			this.getDraw().addMouseListener(this);
 			this.getDraw().addMouseMotionListener(this);
@@ -77,7 +77,7 @@ public abstract class Controler implements MouseListener,MouseMotionListener{
 
 	
 	
-	private void liberer(){
+	private void liberate(){
 		this.getDraw().removeMouseListener(this.getDraw().getControler());
 		this.getDraw().removeMouseMotionListener(this.getDraw().getControler());
 	
