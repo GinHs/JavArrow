@@ -1,4 +1,4 @@
-package fr;
+package fr.eseo.javarrow.controller;
 
 import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
@@ -7,7 +7,6 @@ import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
 
-import fr.eseo.javarrow.controller.Controler;
 import fr.eseo.javarrow.view.Window;
 
 public class Action extends AbstractAction{
