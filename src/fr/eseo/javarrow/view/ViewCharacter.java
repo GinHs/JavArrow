@@ -17,10 +17,10 @@ public class ViewCharacter {
 	}
 	public void affiche(Graphics2D g2d) {
 		g2d.drawLine(
-				(int)character.getX()+50, 
-				(int)character.getY()+50,
-				(int)character.getX()-50,
-				(int)character.getY()-50);
+				(int)character.getX(), 
+				(int)character.getY() + (int)character.getHeight(),
+				(int)character.getX(),
+				(int)character.getY());
 	}
 	
 }
