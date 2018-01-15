@@ -38,7 +38,12 @@ public abstract class Controler implements MouseListener,MouseMotionListener{
 	}
 	public void mouseReleased(MouseEvent e){
 		Trajectory t = new Trajectory(this.a);
-		t.calculateTrajectory(50,(float)x1,(float)x2,(float)y1,(float)y2);
+		try {
+			t.calculateTrajectory(50,(float)x1,(float)x2,(float)y1,(float)y2);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		this.createViewArrow();
 	}
 	
