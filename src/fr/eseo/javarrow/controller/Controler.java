@@ -49,7 +49,8 @@ public class Controler implements MouseListener,MouseMotionListener{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		this.createViewArrow();
+		this.draw.addView(createViewArrow(this.a));
+		this.draw.repaint();
 		
 	}
 	
@@ -88,8 +89,8 @@ public class Controler implements MouseListener,MouseMotionListener{
 	
 	}
 	
-	public ViewArrow createViewArrow() {
-		ViewArrow ve=new ViewArrow(this.a);
+	public ViewArrow createViewArrow(Arrow arrow) {
+		ViewArrow ve=new ViewArrow(arrow);
 		return ve;
 	}
 }

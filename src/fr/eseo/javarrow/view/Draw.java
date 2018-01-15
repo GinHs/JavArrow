@@ -51,4 +51,10 @@ public class Draw extends JPanel{
 		g2D.dispose(); 
 	
 	}
+
+	public void addView(ViewArrow createViewArrow) {
+		System.out.println("hellé");
+		this.vueFormes.add(createViewArrow);
+		
+	}
 }
