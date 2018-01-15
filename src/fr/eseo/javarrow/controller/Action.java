@@ -16,7 +16,7 @@ public class Action extends AbstractAction{
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		Controler controller = new Controler(Window.getInstance().getDraw());
+		new Controler(Window.getInstance().getDraw());
 	}
 }
 

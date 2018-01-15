@@ -1,9 +1,13 @@
 package fr.eseo.javarrow.view;
 import java.awt.BorderLayout;
-
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
 
 import fr.eseo.javarrow.controller.Action;
 
@@ -26,7 +30,17 @@ public class Window extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE) ;
 		this.setLayout(new BorderLayout());
 		this.add(draw,BorderLayout.CENTER);
-		new Action();
+		
+		
+		JMenuBar menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		JMenu fichierMenu = new JMenu();
+		fichierMenu.setText("Fichier");
+		menuBar.add(fichierMenu);
+		JMenuItem ouvrirMenu = new JMenuItem(new Action());
+		fichierMenu.add(ouvrirMenu);
+		
+		
 		this.repaint();
 	
 }
