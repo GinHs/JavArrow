@@ -1,5 +1,5 @@
 package fr;
-
+import fr.eseo.javarrow.model.Character;
 public class Game {
 	private Character player1;
 	private Character player2;
