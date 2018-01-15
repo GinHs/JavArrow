@@ -2,7 +2,6 @@ package fr;
 import java.io.*;
 import java.util.List;
 
-import fr.eseo.gpi.beanartist.vue.formes.VueForme;
 import fr.eseo.javarrow.model.Arrow;
 import fr.eseo.javarrow.view.Window; 
 
