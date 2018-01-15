@@ -1,7 +1,6 @@
 package fr.eseo.javarrow.view;
 
 import java.awt.Graphics2D;
-
 import fr.eseo.javarrow.model.Arrow;
 
 
