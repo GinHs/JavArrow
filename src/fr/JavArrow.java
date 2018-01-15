@@ -1,6 +1,8 @@
-package fr.eseo.javarrow.view;
+package fr;
 
 import javax.swing.SwingUtilities;
+
+import fr.eseo.javarrow.view.Window;
 
 
 public class JavArrow {
