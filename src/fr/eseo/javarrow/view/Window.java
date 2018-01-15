@@ -5,6 +5,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import fr.eseo.javarrow.controller.Action;
+
 
 public class Window extends JFrame{
 	
@@ -24,6 +26,7 @@ public class Window extends JFrame{
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE) ;
 		this.setLayout(new BorderLayout());
 		this.add(draw,BorderLayout.CENTER);
+		new Action();
 		this.repaint();
 	
 }
