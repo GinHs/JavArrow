@@ -44,13 +44,13 @@ public class Controler implements MouseListener,MouseMotionListener{
 	
 		Trajectory t = new Trajectory(this.a);
 		
-		int [][]tab=t.calculateTrajectory(50,(float)x1,(float)x2,(float)y1,(float)y2);
+		int [][]tab=t.calculateTrajectory(50,(float)x1,(float)x2,800-(float)y1,800-(float)y2);
 		
 		for(int j=0;j<tab[0].length;j++) {
-			this.a.setX(tab[0][j]);
-			this.a.setY(tab[1][j]);
+			Arrow r = new Arrow(tab[0][j],tab[1][j]);
+			this.draw.addView(createViewArrow(r));
 		}
-		this.draw.addView(createViewArrow(this.a));
+		
 		this.draw.repaint();
 		
 	}

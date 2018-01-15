@@ -22,7 +22,7 @@ public class Draw extends JPanel{
 	private Controler controler;
 	
 	
-	private Game game = new Game(new Character("ju",100,800),new Character("co",1800,800),new Character("ju",100,800));
+	private Game game = new Game(new Character("ju",100,800),new Character("co",1800,800));
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
@@ -61,8 +61,9 @@ public class Draw extends JPanel{
 	}
 
 	public void addView(ViewArrow createViewArrow) {
-		System.out.println("hellé");
+		//System.out.println("hellop");
 		this.vueFormes.add(createViewArrow);
+		
 		
 	}
 }
