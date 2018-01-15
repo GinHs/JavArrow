@@ -12,6 +12,9 @@ import java.util.List;
 
 import javax.swing.JPanel;
 
+import fr.eseo.javarrow.controller.Controler;
+import fr.eseo.javarrow.view.ViewArrow;
+
 
 
 public class Draw extends JPanel{

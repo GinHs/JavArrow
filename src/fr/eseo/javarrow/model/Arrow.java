@@ -1,4 +1,4 @@
-package fr;
+package fr.eseo.javarrow.model;
 
 public class Arrow {
 	private float x;
