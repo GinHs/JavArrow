@@ -43,13 +43,15 @@ public class Controler implements MouseListener,MouseMotionListener{
 	public void mouseReleased(MouseEvent e){
 	
 		Trajectory t = new Trajectory(this.a);
-		try {
-			t.calculateTrajectory(50,(float)x1,(float)x2,(float)y1,(float)y2);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+		
+		int [][]tab=t.calculateTrajectory(50,(float)x1,(float)x2,(float)y1,(float)y2);
+		
+		for(int j=0;j<tab[0].length;j++) {
+			this.a.setX(tab[0][j]);
+			this.a.setY(tab[1][j]);
 		}
-		this.createViewArrow();
+		this.draw.addView(createViewArrow(this.a));
+		this.draw.repaint();
 		
 	}
 	
@@ -88,8 +90,8 @@ public class Controler implements MouseListener,MouseMotionListener{
 	
 	}
 	
-	public ViewArrow createViewArrow() {
-		ViewArrow ve=new ViewArrow(this.a);
+	public ViewArrow createViewArrow(Arrow arrow) {
+		ViewArrow ve=new ViewArrow(arrow);
 		return ve;
 	}
 }

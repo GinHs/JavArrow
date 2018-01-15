@@ -10,7 +10,7 @@ public class Character {
 	public float y;
 	public float height;
 	public int nbWin;
-	public static final float HEIGHT_PER_DEFAULT = 10;
+	public static final float HEIGHT_PER_DEFAULT = 100;
 
 	/**
 	 * Constructor
