@@ -50,7 +50,6 @@ public class Draw extends JPanel{
 		super.paintComponent(g);
 		Graphics2D g2D = (Graphics2D)g.create();
 		g2D.setColor(new Color(51,51,51));
-		g2D.drawLine(50,750, 50, 800);
 		g2D.drawLine(0,800, 2000, 800);
 		new ViewCharacter(player1).affiche(g2D);
 		new ViewCharacter(player2).affiche(g2D);
