@@ -50,6 +50,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 			e1.printStackTrace();
 		}
 		this.createViewArrow();
+		//hello
 	}
 	
 	public void mouseClicked(MouseEvent e){
