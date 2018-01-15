@@ -1,5 +1,9 @@
 package fr;
 
+import fr.eseo.javarrow.model.Character;
+import fr.eseo.javarrow.view.Draw;
+import fr.Trajectory;
+
 public class Game {
 	private Character player1;
 	private Character player2;
@@ -8,9 +12,9 @@ public class Game {
 	private int deltaY;
 	private int scorePlayer1;
 	private int scorePlayer2;
-	private JPanel JPanelGame;
-	private JPanel JPanelPlayer1;
-	private JPanel JPanelPlayer2;
+	private Draw JPanelGame;
+	private Draw JPanelPlayer1;
+	private Draw JPanelPlayer2;
 	private Trajectory trajectory;
 	
 	public Game(Character player1, Character player2) {
@@ -33,12 +37,12 @@ public class Game {
 	}
 	
 	/* JPanel pour l'animation flèche */
-	public JPanel drawingAnimationPanel() {
+	public Draw drawingAnimationPanel() {
 		return //A JPanel
 	}
 	
 	/* JPanel pour le joueur qui vise */
-	public JPanel drawAimingPanel() {
+	public Draw drawAimingPanel() {
 		return //A JPanel
 	}
 	
