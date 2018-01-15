@@ -19,3 +19,4 @@ public class Action extends AbstractAction{
 		Controler controller = new Controler(Window.getInstance().getDraw());
 	}
 }
+
