@@ -8,19 +8,42 @@ public class Game {
 	private int deltaY;
 	private int scorePlayer1;
 	private int scorePlayer2;
+	private JPanel JPanelGame;
 	private JPanel JPanelPlayer1;
 	private JPanel JPanelPlayer2;
 	private Trajectory trajectory;
 	
-	public Game(Character player1, Character player2, Character activePlayer) {
+	public Game(Character player1, Character player2) {
 		this.setPlayer1(player1);
 		this.setPlayer2(player2);
-		this.setActivePlayer(activePlayer);
+		this.setActivePlayer(player1);
+		this.setScorePlayer1(0);
+		this.setScorePlayer2(0);
 	}
 	
-	public void playARound(float angle, float initialSpeed) {
-		this.getActivePlayer();
-		//test commit
+	public void activePlayerAiming(int deltaX, int deltaY) {
+		Trajectory aimingTrajectory = new Trajectory(deltaX, deltaY);
+		//construction et envoi du JPanel
+		sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
+	}
+	
+	public void activePlayerShooting(int deltaX, int deltaY) {
+		this.setTrajectory(new Trajectory(deltaX, deltaY));
+		sendToPlayers(this.drawingAnimationPanel());
+	}
+	
+	/* JPanel pour l'animation flèche */
+	public JPanel drawingAnimationPanel() {
+		return //A JPanel
+	}
+	
+	/* JPanel pour le joueur qui vise */
+	public JPanel drawAimingPanel() {
+		return //A JPanel
+	}
+	
+	public void playARound() {
+		
 		this.changeActivePlayer();
 	}
 	
@@ -32,12 +55,28 @@ public class Game {
 		}
 	}
 	
+	public void getActiveJPanel() {
+		if(this.getActivePlayer().equals(this.getPlayer1())) {
+			return this.getJPanelPlayer1();
+		} else {
+			return this.getJPanelPlayer2();
+		}
+	}
+	
 	public Trajectory getTrajectory() {
 		return this.trajectory;
 	}
 	
 	public void setTrajectory(Trajectory trajectory) {
 		this.trajectory = trajectory;
+	}
+	
+	public JPanel getJPanelGame() {
+		return this.JPanelGame;
+	}
+	
+	public void setJPanelGame(JPanel JPanelGame) {
+		this.JPanelGame = JPanelGame;
 	}
 	
 	public JPanel getJPanelPlayer2() {
