@@ -13,9 +13,9 @@ public class Window extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public static final String TITRE_PAR_DEFAUT="BeAnArtist";
+	public static final String TITRE_PAR_DEFAUT="JavArrow";
 	private static Window instance = new Window();
-	private Draw draw=new Draw(Draw.LARGEUR_PAR_DEFAUT,Draw.HAUTEUR_PAR_DEFAUT,Draw.COULEUR_FOND_PAR_DEFAUT);
+	private Draw draw=new Draw(Draw.length,Draw.height,Draw.Color);
 	
 	
 	private Window() {

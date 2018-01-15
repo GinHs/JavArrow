@@ -15,9 +15,9 @@ import javax.swing.JPanel;
 
 
 public class Draw extends JPanel{
-	public static int LARGEUR_PAR_DEFAUT=500;
-	public static int HAUTEUR_PAR_DEFAUT=500;
-	public static Color COULEUR_FOND_PAR_DEFAUT=new Color(255,255,255);
+	public static int length=500;
+	public static int height=500;
+	public static Color Color=new Color(255,255,255);
 	private Controler controler;
 	
 	public Controler getControler() {
