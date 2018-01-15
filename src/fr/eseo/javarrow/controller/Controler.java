@@ -10,11 +10,11 @@ import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
  
 
-public abstract class Controler implements MouseListener,MouseMotionListener{
+public class Controler implements MouseListener,MouseMotionListener{
 	
 	
 	public Controler(Draw draw){
-		this.draw=draw;
+		this.draw = draw;
 	};
 	
 	
@@ -23,10 +23,7 @@ public abstract class Controler implements MouseListener,MouseMotionListener{
 	private int x2;
 	private int y1;
 	private int y2;
-	private Arrow a=new Arrow(50,50);
-	
-	
-
+	private Arrow a = new Arrow(50,50);
 	
 	public Draw getDraw() {
 		return this.draw;
@@ -37,8 +34,8 @@ public abstract class Controler implements MouseListener,MouseMotionListener{
 	}
 	
 	public void mousePressed(MouseEvent e){
-		this.x1=e.getX();
-		this.y1=e.getY();
+		this.x1 = e.getX();
+		this.y1 = e.getY();
 	
 	}
 	public void mouseReleased(MouseEvent e){
@@ -62,8 +59,8 @@ public abstract class Controler implements MouseListener,MouseMotionListener{
 	}
 	
 	public void mouseDragged(MouseEvent e){
-		this.x2=e.getX();
-		this.y2=e.getY();
+		this.x2 = e.getX();
+		this.y2 = e.getY();
 	}
 	public void mouseEntered(MouseEvent e){
 		
