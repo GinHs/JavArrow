@@ -9,6 +9,8 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import fr.eseo.javarrow.controller.Controler;
 import fr.Game;
@@ -22,7 +24,7 @@ public class Draw extends JPanel{
 	private Controler controler;
 	
 	
-	private Game game = new Game(new Character("ju",100,800),new Character("co",1800,800),new Character("ju",100,800));
+	private Game game = new Game(new Character("julien",100,800),new Character("corentin",1800,800),new Character("ju",100,800));
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
@@ -54,6 +56,8 @@ public class Draw extends JPanel{
 		new ViewCharacter(player1).affiche(g2D);
 		new ViewCharacter(player2).affiche(g2D);
 		
+		
+	    
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		g2D.dispose(); 
@@ -65,4 +69,5 @@ public class Draw extends JPanel{
 		this.vueFormes.add(createViewArrow);
 		
 	}
+	
 }
