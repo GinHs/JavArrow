@@ -16,7 +16,7 @@ public class Trajectory {
 	int t=0;
 	
 
-	public int[][] calculateTrajectory(float x0,float x1,float x2,float y1,float y2) throws InterruptedException {
+	public int[][] calculateTrajectory(float x0,float x1,float x2,float y1,float y2) {
 		int [][] i = new int [2][1000];
 		while(this.arrow.getY()<500 || this.arrow.getX()<500 ) {
 		i[0][t]=(int) ((x1-x2)*t+x0);
