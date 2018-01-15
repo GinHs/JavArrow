@@ -13,6 +13,7 @@ public class Game {
 	
 	public void playARound(float angle, float initialSpeed) {
 		this.getActivePlayer();
+		//test commit
 		this.changeActivePlayer();
 	}
 	
