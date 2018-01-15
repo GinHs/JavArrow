@@ -9,9 +9,7 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JPanel;
-
 import fr.eseo.javarrow.controller.Controler;
 
 
@@ -34,7 +32,7 @@ public class Draw extends JPanel{
 	
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
-		Dimension d=new Dimension(largeur, hauteur);
+		Dimension d = new Dimension(largeur, hauteur);
 		super.setPreferredSize(d);
 		
 		super.setBackground(fond);
