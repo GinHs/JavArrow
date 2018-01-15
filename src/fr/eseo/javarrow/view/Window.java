@@ -13,9 +13,9 @@ public class Window extends JFrame{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	public static final String TITRE_PAR_DEFAUT="JavArrow";
+	public static final String TITRE_PAR_DEFAUT = "JavArrow";
 	private static Window instance = new Window();
-	private Draw draw=new Draw(Draw.length,Draw.height,Draw.Color);
+	private Draw draw = new Draw(Draw.length,Draw.height,Draw.Color);
 	
 	
 	private Window() {
@@ -35,4 +35,4 @@ public class Window extends JFrame{
 		return this.draw;
 		
 	}
-	}
+}

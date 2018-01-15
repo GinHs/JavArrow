@@ -17,8 +17,8 @@ import fr.eseo.javarrow.controller.Controler;
 
 
 public class Draw extends JPanel{
-	public static int length=500;
-	public static int height=500;
+	public static int length = 500;
+	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
 	
