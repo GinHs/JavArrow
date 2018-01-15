@@ -20,4 +20,6 @@ public class ViewArrow {
 	public void affiche(Graphics2D g2d) {
 		g2d.drawLine((int)arrow.getX()+50, (int)arrow.getY()+50,(int)arrow.getX()-50,(int) arrow.getY()-50);
 	}
+	
+	
 }

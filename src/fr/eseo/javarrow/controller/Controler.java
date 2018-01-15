@@ -10,7 +10,7 @@ import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
  
 
-public abstract class Controler implements MouseListener,MouseMotionListener{
+public class Controler implements MouseListener,MouseMotionListener{
 	
 	
 	public Controler(Draw draw){
