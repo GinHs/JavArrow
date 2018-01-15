@@ -15,6 +15,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 	
 	public Controler(Draw draw){
 		this.draw = draw;
+		associate(draw);
 	};
 	
 	
@@ -36,9 +37,11 @@ public class Controler implements MouseListener,MouseMotionListener{
 	public void mousePressed(MouseEvent e){
 		this.x1 = e.getX();
 		this.y1 = e.getY();
+		
 	
 	}
 	public void mouseReleased(MouseEvent e){
+	
 		Trajectory t = new Trajectory(this.a);
 		try {
 			t.calculateTrajectory(50,(float)x1,(float)x2,(float)y1,(float)y2);
@@ -47,10 +50,10 @@ public class Controler implements MouseListener,MouseMotionListener{
 			e1.printStackTrace();
 		}
 		this.createViewArrow();
+		
 	}
 	
 	public void mouseClicked(MouseEvent e){
-		
 	}
 
 
