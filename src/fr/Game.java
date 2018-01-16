@@ -2,14 +2,13 @@ package fr;
 
 import fr.eseo.javarrow.model.Character;
 import fr.eseo.javarrow.view.Draw;
+import fr.eseo.javarrow.model.Arrow;
 import fr.Trajectory;
 
 public class Game {
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
-	private int deltaX;
-	private int deltaY;
 	private int scorePlayer1;
 	private int scorePlayer2;
 	private Draw JPanelGame;
@@ -25,8 +24,8 @@ public class Game {
 		this.setScorePlayer2(0);
 	}
 	
-	public void activePlayerAiming(int deltaX, int deltaY) {
-		Trajectory aimingTrajectory = new Trajectory(deltaX, deltaY);
+	public void activePlayerAiming(int position, int x1, int x2, int y1, int y2) {
+		Trajectory aimingTrajectory = new Trajectory(position, x1, x2, y1, y2);
 		//construction et envoi du JPanel
 		sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
 	}
@@ -47,7 +46,11 @@ public class Game {
 	}
 	
 	public void playARound() {
-		
+		Arrow arrow = new Arrow(this.getActivePlayer().getX(), 
+				this.getActivePlayer().getY() +
+				this.getActivePlayer().getHeight());
+		Trajectory trajectory = new Trajectory(arrow);
+		while()
 		this.changeActivePlayer();
 	}
 	
@@ -59,11 +62,19 @@ public class Game {
 		}
 	}
 	
-	public void getActiveJPanel() {
+	public Draw getActiveJPanel() {
 		if(this.getActivePlayer().equals(this.getPlayer1())) {
 			return this.getJPanelPlayer1();
 		} else {
 			return this.getJPanelPlayer2();
+		}
+	}
+	
+	public Character getNotActivePlayer() {
+		if(this.getActivePlayer().equals(this.getPlayer1())) {
+			return this.getPlayer2();
+		} else {
+			return this.getPlayer1();
 		}
 	}
 	
@@ -75,48 +86,32 @@ public class Game {
 		this.trajectory = trajectory;
 	}
 	
-	public JPanel getJPanelGame() {
+	public Draw getJPanelGame() {
 		return this.JPanelGame;
 	}
 	
-	public void setJPanelGame(JPanel JPanelGame) {
+	public void setJPanelGame(Draw JPanelGame) {
 		this.JPanelGame = JPanelGame;
 	}
 	
-	public JPanel getJPanelPlayer2() {
+	public Draw getJPanelPlayer2() {
 		return this.JPanelPlayer2;
 	}
 	
-	public void setJPanelPlayer2(JPanel JPanelPlayer2) {
+	public void setJPanelPlayer2(Draw JPanelPlayer2) {
 		this.JPanelPlayer2 = JPanelPlayer2;
 	}
 	
-	public JPanel getJPanelPlayer1() {
+	public Draw getJPanelPlayer1() {
 		return this.JPanelPlayer1;
 	}
 	
-	public void setJPanelPlayer1(JPanel JPanelPlayer1) {
+	public void setJPanelPlayer1(Draw JPanelPlayer1) {
 		this.JPanelPlayer1 = JPanelPlayer1;
 	}
 	
 	public int getNumManche() {
 		return this.getScorePlayer1() + this.getScorePlayer2();
-	}
-
-	public int getDeltaY() {
-		return this.deltaY;
-	}
-	
-	public void setDeltaY(int deltaY) {
-		this.deltaY = deltaY;
-	}
-	
-	public int getDeltaX() {
-		return this.deltaX;
-	}
-	
-	public void setDeltaX(int deltaX) {
-		this.deltaX = deltaX;
 	}
 
 	public int getScorePlayer2() {
