@@ -9,6 +9,8 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import fr.eseo.javarrow.controller.Controler;
 import fr.Game;
@@ -54,6 +56,8 @@ public class Draw extends JPanel{
 		new ViewCharacter(player1).affiche(g2D);
 		new ViewCharacter(player2).affiche(g2D);
 		
+		
+	    
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		g2D.dispose(); 
@@ -66,4 +70,5 @@ public class Draw extends JPanel{
 		
 		
 	}
+	
 }

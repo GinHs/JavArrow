@@ -2,6 +2,9 @@ package fr.eseo.javarrow.view;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+
+import javax.swing.JLabel;
+
 import fr.eseo.javarrow.model.Character;
 
 public class ViewCharacter {
@@ -23,6 +26,10 @@ public class ViewCharacter {
 				(int)character.getY() - (int)character.getHeight(),
 				(int)character.getX(),
 				(int)character.getY());
+		
+		
+	    
 	}
+	
 	
 }
