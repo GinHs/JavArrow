@@ -13,7 +13,7 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import fr.eseo.javarrow.controller.Controler;
-import fr.eseo.javarrow.controller.TestThread;
+
 import fr.Game;
 import fr.eseo.javarrow.model.Character;
 
