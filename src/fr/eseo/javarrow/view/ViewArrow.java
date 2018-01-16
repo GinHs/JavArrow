@@ -17,7 +17,7 @@ public class ViewArrow {
 		return arrow;
 	}
 	public void affiche(Graphics2D g2d) {
-		g2d.drawLine((int)arrow.getX()+50, ytoY((int)arrow.getY()+50),(int)arrow.getX()-50,ytoY((int) arrow.getY()-50));
+		g2d.drawLine((int)arrow.getX1(), ytoY((int)arrow.getY1()),(int)arrow.getX2(),ytoY((int) arrow.getY2()));
 	}
 	
 	public int ytoY(int y) {
