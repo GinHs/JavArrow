@@ -65,7 +65,7 @@ public class Draw extends JPanel{
 		new ViewCharacter(player1).affiche(g2D);
 		new ViewCharacter(player2).affiche(g2D);
 		
-		System.out.println("ok");
+		//System.out.println("ok");
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		g2D.dispose(); 
@@ -74,7 +74,7 @@ public class Draw extends JPanel{
 
 	public void addView(ViewArrow createViewArrow) {
 		
-		System.out.println("hellop");
+		//System.out.println("hellop");
 		this.vueFormes.clear();
 		try {
 			Thread.sleep(25);

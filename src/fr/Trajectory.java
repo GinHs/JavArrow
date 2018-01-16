@@ -3,14 +3,36 @@ import java.io.*;
 import java.util.List;
 
 import fr.eseo.javarrow.model.Arrow;
+import fr.eseo.javarrow.view.Draw;
+import fr.eseo.javarrow.view.ViewArrow;
 import fr.eseo.javarrow.view.Window; 
 
 public class Trajectory {
 	
-	public Trajectory (Arrow arrow) {
+	public Trajectory (Draw draw,Arrow arrow,int pos,int x1,int x2,int y1,int y2) {
 		this.arrow=arrow;
+		this.draw=draw;
+		Traject(pos,x1,x2,y1,y2);
 	}
 	
+	public void Traject(int pos,int x1,int x2,int y1,int y2){
+		int [][]tab=calculateTrajectory((float)pos,(float)x1,(float)x2,800-(float)y1,800-(float)y2);
+		int j=1;
+		while (j<tab[0].length-1 && !(tab[0][j+1]==0 && tab[1][j+1]==0)) {
+			
+			Arrow arrow = new Arrow(tab[0][j-1],tab[1][j-1],tab[0][j+1],tab[1][j+1]);
+			/* System.out.println("/n j : "+j);
+			System.out.println("/n x1 : "+tab[0][j-1]);
+			System.out.println("/n y1 : "+tab[1][j-1]);
+			System.out.println("/n x1 : "+tab[0][j+1]);
+			System.out.println("/n y1 : "+tab[1][j+1]);*/
+			this.draw.addView(new ViewArrow(arrow));
+			j++;
+		}
+		
+		
+	}
+	Draw draw;
 	Arrow arrow;
 	float characterheight=50;
 	float t=0;

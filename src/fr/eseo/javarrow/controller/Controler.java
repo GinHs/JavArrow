@@ -25,6 +25,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 	private int y1;
 	private int y2;
 	private Arrow a = new Arrow(0,0,0,0);
+	int p =101;
 	
 	public Draw getDraw() {
 		return this.draw;
@@ -41,25 +42,15 @@ public class Controler implements MouseListener,MouseMotionListener{
 	
 	}
 	public void mouseReleased(MouseEvent e){
-	
-		Trajectory t = new Trajectory(this.a);
+		this.x2 = e.getX();
+		this.y2 = e.getY();
 		
-		int [][]tab=t.calculateTrajectory(50,(float)x1,(float)x2,800-(float)y1,800-(float)y2);
-		int j=1;
-		while (j<tab[0].length-1 && !(tab[0][j+1]==0 && tab[1][j+1]==0)) {
-			
-			Arrow r = new Arrow(tab[0][j-1],tab[1][j-1],tab[0][j+1],tab[1][j+1]);
-			/* System.out.println("/n j : "+j);
-			System.out.println("/n x1 : "+tab[0][j-1]);
-			System.out.println("/n y1 : "+tab[1][j-1]);
-			System.out.println("/n x1 : "+tab[0][j+1]);
-			System.out.println("/n y1 : "+tab[1][j+1]);*/
-			this.draw.addView(createViewArrow(r));
-			j++;
+		new Trajectory(this.draw,this.a,p, x1, x2, y1, y2);
+		if (p==101) {
+			p=1799;
+		}else {
+			p=101;
 		}
-		
-		
-		
 	}
 	
 	public void mouseClicked(MouseEvent e){
@@ -71,8 +62,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 	}
 	
 	public void mouseDragged(MouseEvent e){
-		this.x2 = e.getX();
-		this.y2 = e.getY();
+		
 	}
 	public void mouseEntered(MouseEvent e){
 		
@@ -91,14 +81,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 
 	
 	
-	private void liberate(){
-		this.getDraw().removeMouseListener(this.getDraw().getControler());
-		this.getDraw().removeMouseMotionListener(this.getDraw().getControler());
+
 	
-	}
 	
-	public ViewArrow createViewArrow(Arrow arrow) {
-		ViewArrow ve=new ViewArrow(arrow);
-		return ve;
-	}
 }

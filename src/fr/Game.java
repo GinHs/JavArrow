@@ -25,7 +25,8 @@ public class Game {
 	}
 	
 	public void activePlayerAiming(int position, int x1, int x2, int y1, int y2) {
-		Trajectory aimingTrajectory = new Trajectory(position, x1, x2, y1, y2);
+		Arrow a = new Arrow(0,0,0,0);
+		Trajectory aimingTrajectory = new Trajectory(this.JPanelGame,a, x1, x2, y1, y2);
 		//construction et envoi du JPanel
 		sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
 	}
@@ -37,12 +38,12 @@ public class Game {
 	
 	/* JPanel pour l'animation flèche */
 	public Draw drawingAnimationPanel() {
-		return //A JPanel
+		return null;//A JPanel
 	}
 	
 	/* JPanel pour le joueur qui vise */
 	public Draw drawAimingPanel() {
-		return //A JPanel
+		return null;//A JPanel
 	}
 	
 	public void playARound() {
