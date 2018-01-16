@@ -56,7 +56,6 @@ public class Controler implements MouseListener,MouseMotionListener{
 			System.out.println("/n y1 : "+tab[1][j+1]);*/
 			this.draw.addView(createViewArrow(r));
 			j++;
-			this.draw.repaint();
 		}
 		
 		

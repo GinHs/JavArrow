@@ -13,6 +13,7 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import fr.eseo.javarrow.controller.Controler;
+import fr.eseo.javarrow.controller.TestThread;
 import fr.Game;
 import fr.eseo.javarrow.model.Character;
 
@@ -38,6 +39,14 @@ public class Draw extends JPanel{
 
 	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
 	
+	public List<ViewArrow> getVueFormes() {
+		return vueFormes;
+	}
+
+	public void setVueFormes(List<ViewArrow> vueFormes) {
+		this.vueFormes = vueFormes;
+	}
+
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
 		Dimension d = new Dimension(largeur, hauteur);
@@ -56,8 +65,7 @@ public class Draw extends JPanel{
 		new ViewCharacter(player1).affiche(g2D);
 		new ViewCharacter(player2).affiche(g2D);
 		
-		
-	    
+		System.out.println("ok");
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		g2D.dispose(); 
@@ -65,10 +73,21 @@ public class Draw extends JPanel{
 	}
 
 	public void addView(ViewArrow createViewArrow) {
-		//System.out.println("hellop");
+		
+		System.out.println("hellop");
+		this.vueFormes.clear();
+		try {
+			Thread.sleep(25);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		this.vueFormes.add(createViewArrow);
+		paintComponent(this.getGraphics());
 		
 		
 	}
+	
+
 	
 }
