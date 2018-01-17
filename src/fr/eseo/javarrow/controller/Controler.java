@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import fr.Game;
 import fr.Trajectory;
 import fr.eseo.javarrow.model.Arrow;
 import fr.eseo.javarrow.view.Draw;
@@ -26,6 +27,8 @@ public class Controler implements MouseListener,MouseMotionListener{
 	private int y2;
 	private Arrow a = new Arrow(0,0,0,0);
 	int p =101;
+	int sol = 800;
+	int height =100;
 	
 	public Draw getDraw() {
 		return this.draw;
@@ -44,15 +47,9 @@ public class Controler implements MouseListener,MouseMotionListener{
 	public void mouseReleased(MouseEvent e){
 		this.x2 = e.getX();
 		this.y2 = e.getY();
-		if (x1<p+50 && x1>p-50 && y1<800 && y1>700) {
-			new Trajectory(this.draw,this.a,p, x1, x2, y1, y2);
+		if (x1<p+5 && x1>p-5 && y1<sol && y1>(sol-height)) {
+			new Trajectory(this.draw,this.a,x1, x2, y1, y2);
 			}
-		
-		if (p==101) {
-			p=1799;
-		}else {
-			p=101;
-		}
 	}
 	
 	public void mouseClicked(MouseEvent e){
@@ -64,6 +61,13 @@ public class Controler implements MouseListener,MouseMotionListener{
 	}
 	
 	public void mouseDragged(MouseEvent e){
+		p=(int)this.draw.getGame().getActivePlayer().getX();
+		sol=(int)this.draw.getGame().getActivePlayer().getY();
+		height = (int)this.draw.getGame().getActivePlayer().getHeight();
+		if (x1<p+5 && x1>p-5 && y1<sol && y1>(sol-height)) {
+			ViewArrow createViewArrow = new ViewArrow(new Arrow(this.x1,sol-this.y1,e.getX(),sol-e.getY()));
+			this.draw.addView(createViewArrow );
+		}
 		
 	}
 	public void mouseEntered(MouseEvent e){

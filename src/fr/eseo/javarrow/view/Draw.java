@@ -26,6 +26,14 @@ public class Draw extends JPanel{
 	
 	
 	private Game game = new Game(new Character("ju",100,800),new Character("co",1800,800));
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
@@ -38,6 +46,7 @@ public class Draw extends JPanel{
 	}
 
 	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
+	
 	
 	public List<ViewArrow> getVueFormes() {
 		return vueFormes;
@@ -65,7 +74,8 @@ public class Draw extends JPanel{
 		new ViewCharacter(player1).affiche(g2D);
 		new ViewCharacter(player2).affiche(g2D);
 		
-		//System.out.println("ok");
+		//g2D.drawOval((int) this.game.getActivePlayer().getX(),600 , 50, 50);
+		
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		g2D.dispose(); 
@@ -76,12 +86,7 @@ public class Draw extends JPanel{
 		
 		//System.out.println("hellop");
 		this.vueFormes.clear();
-		try {
-			Thread.sleep(25);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		this.vueFormes.add(createViewArrow);
 		paintComponent(this.getGraphics());
 		

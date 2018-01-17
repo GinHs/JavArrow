@@ -24,7 +24,7 @@ public class Window extends JFrame{
 	public static final String TITRE_PAR_DEFAUT = "JavArrow";
 	private static Window instance = new Window();
 	private Draw draw = new Draw(Draw.length,Draw.height,Draw.Color);
-	private Game game = new Game(new Character("julien",100,800),new Character("corentin",1800,800));
+	private Game game = new Game(new Character("julien",200,800),new Character("corentin",1700,800));
 
 	
 	private Window() {
