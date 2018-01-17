@@ -160,5 +160,10 @@ public class Game {
 		this.getActivePlayer();
 		
 	}
+
+	public void increaseRound() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

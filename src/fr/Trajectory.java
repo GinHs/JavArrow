@@ -97,9 +97,9 @@ public class Trajectory {
 		System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
 		
 		if (this.draw.getGame().getNotActivePlayer().isReach(i[0][n],i[1][n])) {
-			System.out.println("you win");
+			draw.getGame().increaseRound();
 		}else {
-			draw.getGame();
+			draw.getGame().changeActivePlayer();;
 		}
 		
 		return i;
