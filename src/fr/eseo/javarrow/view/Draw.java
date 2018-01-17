@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.Stroke;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
@@ -20,6 +22,9 @@ import fr.eseo.javarrow.model.Game;
 
 
 public class Draw extends JPanel{
+	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	int screenWidth = gd.getDisplayMode().getWidth();
+	int screenHeight = gd.getDisplayMode().getHeight();
 	public static int length = 500;
 	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
@@ -81,7 +86,7 @@ public class Draw extends JPanel{
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
 		//Stroke s = g2D.getStroke();
-		// trait épais
+		// trait ï¿½pais
 		//g2D.setStroke(new BasicStroke(5)); // Mettre largeur de 5
 		g2D.setColor(new Color(51,51,51));
 
@@ -114,6 +119,17 @@ public class Draw extends JPanel{
 		
 	}
 	
+	public int calculateRelativeLength(int length) {
+		return 0;
+	}
+	
+	public int getScreenWidth() {
+		return this.screenWidth;
+	}
+	
+	public int getScreenHeigth() {
+		return this.screenHeight;
+	}
 
 	
 }
