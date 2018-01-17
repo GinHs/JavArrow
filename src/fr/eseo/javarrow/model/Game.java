@@ -9,8 +9,8 @@ public class Game {
 	private Character activePlayer;
 	
 
-	private int scorePlayer1;
-	private int scorePlayer2;
+	//private int scorePlayer1;
+	//private int scorePlayer2;
 	private Draw JPanelGame;
 	private Draw JPanelPlayer1;
 	private Draw JPanelPlayer2;
@@ -20,8 +20,8 @@ public class Game {
 		this.setPlayer1(player1);
 		this.setPlayer2(player2);
 		this.setActivePlayer(player1);
-		this.setScorePlayer1(0);
-		this.setScorePlayer2(0);
+		//this.setScorePlayer1(0);
+		//this.setScorePlayer2(0);
 	}
 	
 	public void activePlayerAiming(int position, int x1, int x2, int y1, int y2) {
@@ -112,7 +112,7 @@ public class Game {
 		this.JPanelPlayer1 = JPanelPlayer1;
 	}
 	
-	public int getNumManche() {
+	/*public int getNumManche() {
 		return this.getScorePlayer1() + this.getScorePlayer2();
 	}
 
@@ -155,7 +155,7 @@ public class Game {
 	public void setPlayer1(Character player1) {
 		this.player1 = player1;
 	}
-
+*/
 	public void win() {
 		this.getActivePlayer();
 		
