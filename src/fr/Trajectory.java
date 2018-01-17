@@ -25,7 +25,7 @@ public class Trajectory {
 			System.out.println("/n x1 : "+tab[0][j-1]);
 			System.out.println("/n y1 : "+tab[1][j-1]);
 			System.out.println("/n x1 : "+tab[0][j+1]);
-			System.out.println("/n y1 : "+tab[1][j+1]);*/
+			System.out.println("/n y1 : "+tab[1][j+1]);*/ 
 			this.draw.addView(new ViewArrow(arrow));
 			j++;
 		}
