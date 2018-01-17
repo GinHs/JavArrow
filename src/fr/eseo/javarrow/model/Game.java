@@ -4,6 +4,7 @@ import fr.eseo.javarrow.view.Draw;
 import fr.Trajectory;
 
 public class Game {
+	private static final int ROUNDMAX = 5;
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
@@ -160,7 +161,23 @@ public class Game {
 	}
 
 	public void increaseRound() {
+		if (round != ROUNDMAX) {
 		this.round++;
+		if(this.activePlayer==this.player1) {
+			this.setScorePlayer1(this.getScorePlayer1()+1);
+		}else {
+			this.setScorePlayer2(this.getScorePlayer2()+1);
+		}
+		if (0==round%2) {
+			this.setActivePlayer(player2);
+		}else {
+			this.setActivePlayer(player1);
+		}
+		}else {
+			System.out.println("Vous avez gagné");
+		}
+		
+		
 	}
 	
 }

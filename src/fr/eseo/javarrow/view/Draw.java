@@ -110,10 +110,11 @@ public class Draw extends JPanel{
 
 		//Qui doit jouer.
 		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", 900, 100);
+		g2D.drawString("ROUND : "+game.getRound(), 900, 50);
 		
 		//Affichage des scores
-		g2D.drawString("Score : "+player1.getScore(), 100, 100);
-		g2D.drawString("Score : "+player2.getScore(), 1700, 100);
+		g2D.drawString("Score : "+this.game.getScorePlayer1(), 100, 100);
+		g2D.drawString("Score : "+this.game.getScorePlayer2(), 1700, 100);
 
 		g2D.dispose();
 	
@@ -125,7 +126,8 @@ public class Draw extends JPanel{
 		this.vueFormes.clear();
 		
 		this.vueFormes.add(createViewArrow);
-		paintComponent(this.getGraphics());
+		this.repaint();
+		
 		
 		
 	}

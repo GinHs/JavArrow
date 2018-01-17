@@ -37,12 +37,12 @@ public class Trajectory {
 			}
 
 			this.draw.addView(new ViewArrow(arrow));
+			this.draw.paintComponent(this.draw.getGraphics());
 			j++;
 		}
 		
 		if (this.draw.getGame().getNotActivePlayer().isReach(tab[0][j],tab[1][j])) {
 			draw.getGame().increaseRound();
-			System.out.println("Vous avez gagné");
 		}else {
 			draw.getGame().changeActivePlayer();;
 		}

@@ -47,7 +47,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 	public void mouseReleased(MouseEvent e){
 		this.x2 = e.getX();
 		this.y2 = e.getY();
-		if (x1<p+5 && x1>p-5 && y1<sol && y1>(sol-height)) {
+		if (x1<p+15 && x1>p-15 && y1<sol && y1>(sol-height)) {
 			new Trajectory(this.draw,this.a,x1, x2, y1, y2);
 			}
 	}
@@ -64,7 +64,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 		p=(int)this.draw.getGame().getActivePlayer().getX();
 		sol=(int)this.draw.getGame().getActivePlayer().getY();
 		height = (int)this.draw.getGame().getActivePlayer().getHeight();
-		if (x1<p+5 && x1>p-5 && y1<sol && y1>(sol-height)) {
+		if (x1<p+15 && x1>p-15 && y1<sol && y1>(sol-height)) {
 			ViewArrow createViewArrow = new ViewArrow(new Arrow(this.x1,sol-this.y1,e.getX(),sol-e.getY()));
 			this.draw.addView(createViewArrow );
 		}
