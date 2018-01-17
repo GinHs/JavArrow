@@ -9,7 +9,7 @@ public class Character {
 	public float x;
 	public float y;
 	public float height;
-	public int nbWin;
+	public int score;
 	public static final float HEIGHT_PER_DEFAULT = 100;
 
 	/**
@@ -24,7 +24,7 @@ public class Character {
 		this.x = x;
 		this.y = y;
 		this.height = HEIGHT_PER_DEFAULT;
-		this.nbWin = 0;
+		this.score = 0;
 	}
 	
 	/**
@@ -73,12 +73,12 @@ public class Character {
 		this.height = height;
 	}
 	
-	public int getNbWin() {
-		return nbWin;
+	public int getScore() {
+		return score;
 	}
 	
-	public void setNbWin(int nbWin) {
-		this.nbWin = nbWin;
+	public void setNbWin(int score) {
+		this.score = score;
 	}
 
 }
