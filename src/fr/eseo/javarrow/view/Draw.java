@@ -27,21 +27,13 @@ public class Draw extends JPanel{
 	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 	int screenWidth = gd.getDisplayMode().getWidth();
 	int screenHeight = gd.getDisplayMode().getHeight();
+	
 	public static int length = 500;
 	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
 	public Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
 		
-	public Game getGame() {
-		return this.game;
-	}
-
-	public void setGame(Game game) {
-		this.game = game;
-	}
-
-
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
@@ -76,8 +68,6 @@ public class Draw extends JPanel{
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		Graphics2D g2D = (Graphics2D)g.create();
-		
-
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
 		Character character = this.getGame().getPlayer1();
@@ -85,28 +75,17 @@ public class Draw extends JPanel{
 	    g2D.drawImage(img1, (int)character.getX()-25, (int)character.getY()-100,(int)character.width,(int)character.height, this);
 	    g2D.drawImage(img2, (int)character2.getX()-40, (int)character2.getY()-100,(int)character2.width,(int)character2.height, this);
 	    
-	    
 	    g2D.finalize();
-		
-
+	
 		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
-
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		 
-		Stroke s = g2D.getStroke();
-		// trait épais
-
-		//g2D.setStroke(new BasicStroke(5)); // Mettre largeur de 5
 		g2D.setColor(new Color(51,51,51));
-
 		g2D.drawLine(0,800, 2000, 800); 
 		
-		
-		//g2D.setStroke(s); // Mettre largeur de 5
-
 		//Qui doit jouer.
 		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", 900, 100);
 		g2D.drawString("ROUND : "+game.getRound(), 900, 50);
@@ -114,7 +93,6 @@ public class Draw extends JPanel{
 		//Affichage des scores
 		g2D.drawString("Score : "+this.game.getScorePlayer1(), 100, 100);
 		g2D.drawString("Score : "+this.game.getScorePlayer2(), 1700, 100);
-
 		g2D.dispose();
 	
 	}
@@ -122,7 +100,6 @@ public class Draw extends JPanel{
 	public void addView(ViewArrow createViewArrow) {
 		this.vueFormes.clear();
 		this.vueFormes.add(createViewArrow);
-
 		this.repaint();
 		}
 	
@@ -136,6 +113,14 @@ public class Draw extends JPanel{
 	
 	public int getScreenHeigth() {
 		return this.screenHeight;
+	}
+	
+	public Game getGame() {
+		return this.game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
 	}
 
 	

@@ -1,9 +1,8 @@
 package fr.eseo.javarrow.model;
 
 public class Arrow {
-	private float x1;
 	
-
+	private float x1;
 	private float y1;
 	private float x2;
 	private float y2;
@@ -48,8 +47,5 @@ public class Arrow {
 	public void setY2(float y2) {
 		this.y2 = y2;
 	}
-	
-
-	
 	
 }
