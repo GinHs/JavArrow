@@ -20,9 +20,11 @@ public class Game {
 	private Draw JPanelGame;
 	private Draw JPanelPlayer1;
 	private Draw JPanelPlayer2;
+	private Draw draw;
 	//private Trajectory trajectory;
 	
 	public Game(Draw draw,Character player1, Character player2) {
+		this.draw=draw;
 		this.setPlayer1(player1);
 		this.setPlayer2(player2);
 		this.setActivePlayer(player1);
@@ -180,15 +182,16 @@ public class Game {
 			this.setActivePlayer(player1);
 		}
 		}else {
-			Window.getInstance().getDraw().removeAll();
-			Graphics g = Window.getInstance().getDraw().getGraphics();
+			draw.removeAll();
+			Graphics g = draw.getGraphics();
 			Graphics2D g2D = (Graphics2D)g.create();
-			Font fonte = new Font("TimesRoman ",Font.BOLD,30);
+			Font fonte = new Font("TimesRoman ",Font.BOLD,60);
 		    g2D.setFont(fonte);
+		    System.out.println("win");
 			if (this.getScorePlayer1()>this.getScorePlayer2()) {
-				g2D.drawString(this.getPlayer1().getName()+"a gagné",500,500);
+				g2D.drawString(this.getPlayer1().getName()+"a gagné",200,200);
 			}else {
-				g2D.drawString(this.getPlayer2().getName()+"a gagné",500,500);
+				g2D.drawString(this.getPlayer2().getName()+"a gagné",200,200);
 			}
 			
 			
