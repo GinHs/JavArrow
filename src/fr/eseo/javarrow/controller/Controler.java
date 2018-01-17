@@ -17,13 +17,6 @@ public class Controler implements MouseListener,MouseMotionListener{
 	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 	int screenWidth = gd.getDisplayMode().getWidth();
 	int screenHeight = gd.getDisplayMode().getHeight(); 
-	
-	public Controler(Draw draw){
-		this.draw = draw;
-		associate(draw);
-	};
-	
-	
 	private Draw draw;
 	private int x1;
 	private int x2;
@@ -33,6 +26,11 @@ public class Controler implements MouseListener,MouseMotionListener{
 	int p =101;
 	int sol = 800;
 	int height =100;
+	
+	public Controler(Draw draw){
+		this.draw = draw;
+		associate(draw);
+	};
 	
 	public Draw getDraw() {
 		return this.draw;
