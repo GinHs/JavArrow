@@ -45,7 +45,7 @@ public class Trajectory {
 		System.out.println("y1"+y1);
 		System.out.println("x2"+x2);
 		System.out.println("y2"+y2);
-		while(((x1-x2)*t+x0)<1800 && ((x1-x2)*t+x0)>0 && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
+		while(((x1-x2)*t+x0)<1800 && ((x1-x2)*t+x0)>100 && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
 		i[0][n]=(int) ((x1-x2)*t+x0);
 		i[1][n]=(int)(-5*t*t+(y1-y2)*t+characterheight);
 		//System.out.println("/n t : "+t);

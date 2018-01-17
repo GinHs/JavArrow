@@ -44,8 +44,10 @@ public class Controler implements MouseListener,MouseMotionListener{
 	public void mouseReleased(MouseEvent e){
 		this.x2 = e.getX();
 		this.y2 = e.getY();
+		if (x1<p+50 && x1>p-50 && y1<800 && y1>700) {
+			new Trajectory(this.draw,this.a,p, x1, x2, y1, y2);
+			}
 		
-		new Trajectory(this.draw,this.a,p, x1, x2, y1, y2);
 		if (p==101) {
 			p=1799;
 		}else {
