@@ -32,7 +32,18 @@ public class Draw extends JPanel{
 	public static int length = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
-	public Game game = new Game(this,new Character("ju",(int)(screenWidth*0.10),(int)(screenHeight*0.74),70,100),new Character("co",screenWidth-(int)(screenWidth*0.10),(int)(screenHeight*0.74),70,100));
+	
+	public Game game = new Game(this,
+			new Character("ju",(int)(screenWidth*0.10),
+					(int)(screenHeight*0.74),
+					(int)(0.0644*screenHeight),
+					(int)(0.092*screenHeight)),
+			new Character("co",screenWidth-(int)(screenWidth*0.10),
+					(int)(screenHeight*0.74),
+					(int)(0.0644*screenHeight),
+					(int)(0.092*screenHeight)));
+	
+	
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
@@ -72,7 +83,7 @@ public class Draw extends JPanel{
 		
 
 		Graphics2D g2D = (Graphics2D)g.create();
-		
+		System.out.println(0.09259*screenHeight);
 		if (win) {
 			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
