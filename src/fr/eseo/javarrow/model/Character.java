@@ -34,7 +34,7 @@ public class Character {
 	 * @return True or False
 	 */
 	public boolean isReach(float x, float y) {
-		return (x >= this.getX()) && (y == this.getY()) && (x <= this.getHeight());
+		return (x == this.getX()) && (y >= 800-this.getY()) && (y <= 800-this.getY()+this.getHeight());
 	}
 	
 	

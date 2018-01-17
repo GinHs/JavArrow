@@ -28,7 +28,7 @@ public class Draw extends JPanel{
 	
 	
 
-	private Game game = new Game(new Character("ju",100,800),new Character("co",1800,800));
+	private Game game = new Game(new Character("ju",200,800),new Character("co",1700,800));
 	public Game getGame() {
 		return game;
 	}
@@ -78,8 +78,8 @@ public class Draw extends JPanel{
 		new ViewCharacter(player2).affiche(g2D);
 		
 
-		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
-		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
+		//g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
+		//g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
 		Stroke s = g2D.getStroke();
 		// trait épais

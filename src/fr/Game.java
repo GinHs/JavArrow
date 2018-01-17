@@ -9,6 +9,8 @@ public class Game {
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
+	
+
 	private int scorePlayer1;
 	private int scorePlayer2;
 	private Draw JPanelGame;
@@ -28,12 +30,12 @@ public class Game {
 		Arrow a = new Arrow(0,0,0,0);
 		Trajectory aimingTrajectory = new Trajectory(this.JPanelGame,a, x1, x2, y1, y2);
 		//construction et envoi du JPanel
-		sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
+		//sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
 	}
 	
 	public void activePlayerShooting(int deltaX, int deltaY) {
-		this.setTrajectory(new Trajectory(deltaX, deltaY));
-		sendToPlayers(this.drawingAnimationPanel());
+		/*this.setTrajectory(new Trajectory(deltaX, deltaY));
+		sendToPlayers(this.drawingAnimationPanel());*/
 	}
 	
 	/* JPanel pour l'animation flèche */
@@ -47,15 +49,15 @@ public class Game {
 	}
 	
 	public void playARound() {
-		Arrow arrow = new Arrow(this.getActivePlayer().getX(), 
+		/*Arrow arrow = new Arrow(this.getActivePlayer().getX(), 
 				this.getActivePlayer().getY() +
 				this.getActivePlayer().getHeight());
 		Trajectory trajectory = new Trajectory(arrow);
 		while()
-		this.changeActivePlayer();
+		this.changeActivePlayer();*/
 	}
 	
-	private void changeActivePlayer() {
+	public void changeActivePlayer() {
 		if(this.getActivePlayer().equals(this.getPlayer1())) {
 			this.setActivePlayer(this.getPlayer2());
 		} else {
@@ -78,6 +80,7 @@ public class Game {
 			return this.getPlayer1();
 		}
 	}
+	
 	
 	public Trajectory getTrajectory() {
 		return this.trajectory;
@@ -153,6 +156,11 @@ public class Game {
 	
 	public void setPlayer1(Character player1) {
 		this.player1 = player1;
+	}
+
+	public void win() {
+		this.getActivePlayer();
+		
 	}
 	
 }
