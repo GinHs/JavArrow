@@ -1,8 +1,6 @@
-package fr;
+package fr.eseo.javarrow.model;
 
-import fr.eseo.javarrow.model.Character;
 import fr.eseo.javarrow.view.Draw;
-import fr.eseo.javarrow.model.Arrow;
 import fr.Trajectory;
 
 public class Game {
