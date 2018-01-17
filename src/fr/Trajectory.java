@@ -69,12 +69,12 @@ public class Trajectory {
 			x2=x1+75;
 		}
 		
-		System.out.println("x1"+x1);
+		/*System.out.println("x1"+x1);
 		System.out.println("y1"+y1);
 		System.out.println("x2"+x2);
 		System.out.println("y2"+y2);
 		System.out.println("PosP2"+PosP2);
-		System.out.println("PosP1"+PosP1);
+		System.out.println("PosP1"+PosP1);*/
 		
 		//calcul de la trajectoire
 		while(((x1-x2)*t+x0)<(PosP2+1) && ((x1-x2)*t+x0)>(PosP1-1) && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
@@ -102,8 +102,8 @@ public class Trajectory {
 		}
 		}
 		
-		System.out.println("player aimed"+this.draw.getGame().getNotActivePlayer().getX());
-		System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
+		//System.out.println("player aimed"+this.draw.getGame().getNotActivePlayer().getX());
+		//System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
 		
 		
 		

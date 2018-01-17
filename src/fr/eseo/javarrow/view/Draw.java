@@ -31,7 +31,7 @@ public class Draw extends JPanel{
 	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
-	public Game game;
+	public Game game= new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
 	
 
 	public Game getGame() {
@@ -65,9 +65,8 @@ public class Draw extends JPanel{
 		this.vueFormes = vueFormes;
 	}
 
-	public Draw(int largeur,int hauteur, Color fond,Game game) {
+	public Draw(int largeur,int hauteur, Color fond) {
 		super();
-		this.game=game;
 		Dimension d = new Dimension(largeur, hauteur);
 		super.setPreferredSize(d);
 		super.setBackground(fond);
@@ -85,7 +84,7 @@ public class Draw extends JPanel{
 		Character character = this.getGame().getPlayer1();
 		Character character2 = this.getGame().getPlayer2();
 	    g2D.drawImage(img1, (int)character.getX()-25, (int)character.getY()-100,(int)character.width,(int)character.height, this);
-	    g2D.drawImage(img2, (int)character2.getX()-50, (int)character2.getY()-100,(int)character2.width,(int)character2.height, this);
+	    g2D.drawImage(img2, (int)character2.getX()-40, (int)character2.getY()-100,(int)character2.width,(int)character2.height, this);
 	    
 	    
 	    g2D.finalize();
