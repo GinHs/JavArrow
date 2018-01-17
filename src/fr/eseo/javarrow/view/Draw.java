@@ -1,23 +1,15 @@
 package fr.eseo.javarrow.view;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
-import java.awt.Stroke;
 import java.awt.Toolkit;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import fr.eseo.javarrow.controller.Controler;
 import fr.eseo.javarrow.model.Character;
@@ -83,7 +75,6 @@ public class Draw extends JPanel{
 		
 
 		Graphics2D g2D = (Graphics2D)g.create();
-		System.out.println(0.09259*screenHeight);
 		if (win) {
 			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
