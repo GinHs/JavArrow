@@ -10,7 +10,7 @@ import fr.eseo.javarrow.model.Character;
 public class ViewCharacter {
 
 	
-	protected final Character character;
+	protected final Character character; 
 
 	public ViewCharacter(Character character) {
 		this.character = character;
