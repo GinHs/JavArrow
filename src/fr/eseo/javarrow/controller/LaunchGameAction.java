@@ -1,6 +1,7 @@
 package fr.eseo.javarrow.controller;
 
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.io.FileNotFoundException;
 import java.util.List;
@@ -23,7 +24,8 @@ public class LaunchGameAction extends AbstractAction{
 	public void actionPerformed(ActionEvent arg0) {
 		Window window = Window.getInstance();
 		Draw draw = window.getDraw();
-		
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
 		new Controler(Window.getInstance().getDraw());
 
 		// Mettre a jour les pseudos
@@ -31,7 +33,7 @@ public class LaunchGameAction extends AbstractAction{
 		draw.getGame().getPlayer2().setName(window.pseudo2.getText());
 		
 		window.setContentPane(Window.getInstance().getDraw());
-		window.setPreferredSize(new Dimension(1920,1080));
+		window.setPreferredSize(new Dimension(dim.width,dim.height));
 		window.setLocation(0,0);
 		window.pack();
 		window.revalidate();
