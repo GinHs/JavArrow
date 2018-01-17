@@ -25,15 +25,14 @@ import fr.eseo.javarrow.model.Game;
 
 
 public class Draw extends JPanel{
-	
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-	int screenWidth = dim.width;
-	int screenHeight = dim.height;
+	public int screenWidth = dim.width;
+	public int screenHeight = dim.height;
 	public static int height = 500;
 	public static int length = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
-	public Game game = new Game(this,new Character("ju",200,(int)(screenHeight*0.74),70,100),new Character("co",screenWidth-200,(int)(screenHeight*0.74),70,100));
+	public Game game = new Game(this,new Character("ju",(int)(screenWidth*0.10),(int)(screenHeight*0.74),70,100),new Character("co",screenWidth-(int)(screenWidth*0.10),(int)(screenHeight*0.74),70,100));
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
@@ -102,15 +101,15 @@ public class Draw extends JPanel{
 			this.vueFormes.get(i).affiche(g2D);
 		 
 		g2D.setColor(new Color(51,51,51));
-		g2D.drawLine(0,800, 2000, 800); 
+		g2D.drawLine(0,(int)(screenHeight*0.74), screenWidth, (int)(screenHeight*0.74)); 
 		
 		//Qui doit jouer.
-		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", screenWidth/2-200, 100);
-		g2D.drawString("ROUND : "+game.getRound(), screenWidth/2-150, 50);
+		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", screenWidth/2-(int)(screenWidth*0.10), (int)(screenHeight*0.10));
+		g2D.drawString("ROUND : "+game.getRound(), screenWidth/2-(int)(screenWidth*0.065), (int)(screenHeight*0.05));
 		
 		//Affichage des scores
-		g2D.drawString("Score : "+this.game.getScorePlayer1(), 100, 100);
-		g2D.drawString("Score : "+this.game.getScorePlayer2(), screenWidth-300, 100);
+		g2D.drawString("Score : "+this.game.getScorePlayer1(), (int)(screenWidth*0.05), (int)(screenHeight*0.10));
+		g2D.drawString("Score : "+this.game.getScorePlayer2(), (int)(screenWidth*0.85), (int)(screenHeight*0.10));
 		g2D.dispose();
 	
 	}}
