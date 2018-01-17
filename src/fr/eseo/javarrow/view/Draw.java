@@ -52,7 +52,7 @@ public class Draw extends JPanel{
 	}
 
 	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
-	public boolean win=false;
+	public boolean win=false; 
 	
 	
 	public List<ViewArrow> getVueFormes() {
