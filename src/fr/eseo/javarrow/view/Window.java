@@ -26,7 +26,7 @@ public class Window extends JFrame{
 	private Draw draw = new Draw(Draw.length,Draw.height,Draw.Color);
 	
 	private DrawBegin drawBegin = new DrawBegin(Draw.length,Draw.height,Draw.Color);
-	Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
+	//Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
 	
 
 	public JTextField pseudo1 = new JTextField("Pseudo1",20);
