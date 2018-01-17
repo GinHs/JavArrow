@@ -10,7 +10,8 @@ public class Character {
 	public float y;
 	public float height;
 	public int score;
-	public static final float HEIGHT_PER_DEFAULT = 100;
+	public float width;
+
 
 	/**
 	 * Constructor
@@ -18,12 +19,13 @@ public class Character {
 	 * @param x
 	 * @param y
 	 */
-	public Character(String name, float x, float y) {
+	public Character(String name, float x, float y,float width, float height) {
 		super();
 		this.name = name;
 		this.x = x;
 		this.y = y;
-		this.height = HEIGHT_PER_DEFAULT;
+		this.height = height;
+		this.width = width;
 		this.score = 0;
 	}
 	

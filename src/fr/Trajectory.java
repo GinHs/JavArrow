@@ -42,6 +42,7 @@ public class Trajectory {
 		
 		if (this.draw.getGame().getNotActivePlayer().isReach(tab[0][j],tab[1][j])) {
 			draw.getGame().increaseRound();
+			System.out.println("Vous avez gagné");
 		}else {
 			draw.getGame().changeActivePlayer();;
 		}
@@ -68,12 +69,12 @@ public class Trajectory {
 			x2=x1+75;
 		}
 		
-		System.out.println("x1"+x1);
+		/*System.out.println("x1"+x1);
 		System.out.println("y1"+y1);
 		System.out.println("x2"+x2);
 		System.out.println("y2"+y2);
 		System.out.println("PosP2"+PosP2);
-		System.out.println("PosP1"+PosP1);
+		System.out.println("PosP1"+PosP1);*/
 		
 		//calcul de la trajectoire
 		while(((x1-x2)*t+x0)<(PosP2+1) && ((x1-x2)*t+x0)>(PosP1-1) && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
@@ -85,7 +86,7 @@ public class Trajectory {
 		t=(float) (t+0.25);
 		n++;
 		}
-		
+		if (n>2) {
 		//Rectification pour que la dernière fleche soit sur le sol ou les murs
 		if (((x1-x2)*t+x0)>PosP2){
 			i[0][n]=PosP2;
@@ -99,9 +100,10 @@ public class Trajectory {
 			i[0][n]=i[0][n-1]+(-i[0][n-2]+i[0][n-1]);
 			i[1][n]=0;
 		}
+		}
 		
-		System.out.println("player aimed"+this.draw.getGame().getNotActivePlayer().getX());
-		System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
+		//System.out.println("player aimed"+this.draw.getGame().getNotActivePlayer().getX());
+		//System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
 		
 		
 		

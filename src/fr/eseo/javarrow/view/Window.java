@@ -30,8 +30,10 @@ public class Window extends JFrame{
 	public static final String TITRE_PAR_DEFAUT = "JavArrow";
 	private static Window instance = new Window();
 	private Draw draw = new Draw(Draw.length,Draw.height,Draw.Color);
-	private Game game = new Game(new Character("julien",200,800),new Character("corentin",1700,800));
+	
 	private DrawBegin drawBegin = new DrawBegin(Draw.length,Draw.height,Draw.Color);
+	Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
+	
 
 	public JTextField pseudo1 = new JTextField("Pseudo1",20);
 	public JTextField pseudo2 = new JTextField("Pseudo2",20);
