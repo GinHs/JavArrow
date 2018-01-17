@@ -33,7 +33,7 @@ public class Draw extends JPanel{
 	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
-	public Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
+	public Game game = new Game(this,new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
 		
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();

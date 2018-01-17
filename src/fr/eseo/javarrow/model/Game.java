@@ -1,10 +1,16 @@
 package fr.eseo.javarrow.model;
 
 import fr.eseo.javarrow.view.Draw;
+import fr.eseo.javarrow.view.Window;
+
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 import fr.Trajectory;
 
 public class Game {
-	private static final int ROUNDMAX = 5;
+	private static final int ROUNDMAX = 2;
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
@@ -16,7 +22,7 @@ public class Game {
 	private Draw JPanelPlayer2;
 	//private Trajectory trajectory;
 	
-	public Game(Character player1, Character player2) {
+	public Game(Draw draw,Character player1, Character player2) {
 		this.setPlayer1(player1);
 		this.setPlayer2(player2);
 		this.setActivePlayer(player1);
@@ -174,11 +180,17 @@ public class Game {
 			this.setActivePlayer(player1);
 		}
 		}else {
+			Window.getInstance().getDraw().removeAll();
+			Graphics g = Window.getInstance().getDraw().getGraphics();
+			Graphics2D g2D = (Graphics2D)g.create();
+			Font fonte = new Font("TimesRoman ",Font.BOLD,30);
+		    g2D.setFont(fonte);
 			if (this.getScorePlayer1()>this.getScorePlayer2()) {
-				System.out.println(this.getPlayer1().getName()+"a gagné");
+				g2D.drawString(this.getPlayer1().getName()+"a gagné",500,500);
 			}else {
-				System.out.println(this.getPlayer2().getName()+"a gagné");
+				g2D.drawString(this.getPlayer2().getName()+"a gagné",500,500);
 			}
+			
 			
 		}
 		
