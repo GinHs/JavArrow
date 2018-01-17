@@ -7,26 +7,26 @@ public class Game {
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
-	
-
-	//private int scorePlayer1;
-	//private int scorePlayer2;
+	private int round;
+	private int scorePlayer1;
+	private int scorePlayer2;
 	private Draw JPanelGame;
 	private Draw JPanelPlayer1;
 	private Draw JPanelPlayer2;
-	private Trajectory trajectory;
+	//private Trajectory trajectory;
 	
 	public Game(Character player1, Character player2) {
 		this.setPlayer1(player1);
 		this.setPlayer2(player2);
 		this.setActivePlayer(player1);
-		//this.setScorePlayer1(0);
-		//this.setScorePlayer2(0);
+		this.setRound(1);
+		this.setScorePlayer1(0);
+		this.setScorePlayer2(0);
 	}
 	
 	public void activePlayerAiming(int position, int x1, int x2, int y1, int y2) {
 		Arrow a = new Arrow(0,0,0,0);
-		Trajectory aimingTrajectory = new Trajectory(this.JPanelGame,a, x1, x2, y1, y2);
+		new Trajectory(this.JPanelGame,a, x1, x2, y1, y2);
 		//construction et envoi du JPanel
 		//sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
 	}
@@ -47,12 +47,7 @@ public class Game {
 	}
 	
 	public void playARound() {
-		/*Arrow arrow = new Arrow(this.getActivePlayer().getX(), 
-				this.getActivePlayer().getY() +
-				this.getActivePlayer().getHeight());
-		Trajectory trajectory = new Trajectory(arrow);
-		while()
-		this.changeActivePlayer();*/
+		
 	}
 	
 	public void changeActivePlayer() {
@@ -80,13 +75,13 @@ public class Game {
 	}
 	
 	
-	public Trajectory getTrajectory() {
-		return this.trajectory;
-	}
-	
-	public void setTrajectory(Trajectory trajectory) {
-		this.trajectory = trajectory;
-	}
+//	public Trajectory getTrajectory() {
+//		return this.trajectory;
+//	}
+//	
+//	public void setTrajectory(Trajectory trajectory) {
+//		this.trajectory = trajectory;
+//	}
 	
 	public Draw getJPanelGame() {
 		return this.JPanelGame;
@@ -111,10 +106,6 @@ public class Game {
 	public void setJPanelPlayer1(Draw JPanelPlayer1) {
 		this.JPanelPlayer1 = JPanelPlayer1;
 	}
-	
-	/*public int getNumManche() {
-		return this.getScorePlayer1() + this.getScorePlayer2();
-	}
 
 	public int getScorePlayer2() {
 		return this.scorePlayer2;
@@ -131,7 +122,7 @@ public class Game {
 	public void setScorePlayer1(int scorePlayer1) {
 		this.scorePlayer1 = scorePlayer1;
 	}
-	*/
+
 	public Character getActivePlayer() {
 		return activePlayer;
 	}
@@ -155,15 +146,21 @@ public class Game {
 	public void setPlayer1(Character player1) {
 		this.player1 = player1;
 	}
+	
+	public int getRound() {
+		return this.round;
+	}
+	
+	public void setRound(int round) {
+		this.round = round;
+	}
 
 	public void win() {
 		this.getActivePlayer();
-		
 	}
 
 	public void increaseRound() {
-		// TODO Auto-generated method stub
-		
+		this.round++;
 	}
 	
 }
