@@ -31,11 +31,10 @@ public class Draw extends JPanel{
 	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
-	public Game game= new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
-	
-
+	public Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
+		
 	public Game getGame() {
-		return game;
+		return this.game;
 	}
 
 	public void setGame(Game game) {
@@ -121,16 +120,11 @@ public class Draw extends JPanel{
 	}
 
 	public void addView(ViewArrow createViewArrow) {
-		
-		//System.out.println("hellop");
 		this.vueFormes.clear();
-		
 		this.vueFormes.add(createViewArrow);
+
 		this.repaint();
-		
-		
-		
-	}
+		}
 	
 	public int calculateRelativeLength(int length) {
 		return 0;
