@@ -72,7 +72,9 @@ public class Draw extends JPanel{
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		
 		System.out.println(dim);
-		
+		int width = dim.width;
+		int height = dim.height;
+
 		Graphics2D g2D = (Graphics2D)g.create();
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
@@ -96,12 +98,12 @@ public class Draw extends JPanel{
 		g2D.drawLine(0,800, 2000, 800); 
 		
 		//Qui doit jouer.
-		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", 900, 100);
-		g2D.drawString("ROUND : "+game.getRound(), 900, 50);
+		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", width/2-200, 100);
+		g2D.drawString("ROUND : "+game.getRound(), width/2-150, 50);
 		
 		//Affichage des scores
 		g2D.drawString("Score : "+this.game.getScorePlayer1(), 100, 100);
-		g2D.drawString("Score : "+this.game.getScorePlayer2(), 1700, 100);
+		g2D.drawString("Score : "+this.game.getScorePlayer2(), width-300, 100);
 		g2D.dispose();
 	
 	}
