@@ -3,9 +3,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import fr.eseo.javarrow.controller.LaunchGameAction;
 import fr.eseo.javarrow.model.Character;
@@ -40,9 +42,13 @@ public class Window extends JFrame{
 		JButton bouton = new JButton(new LaunchGameAction());
 		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		this.setLocation(dim.width/2-this.getPreferredSize().width/2, dim.height/2-this.getPreferredSize().height/2);
+		JLabel title = new JLabel("Welcome to JavArrow");
+		title.setFont(new Font("TimesRoman ",Font.BOLD,30));
 
 		drawBegin.setLayout(new FlowLayout());
 		drawBegin.setBackground(Color.WHITE);
+		
+		drawBegin.add(title);
 		drawBegin.add(pseudo1);
 		drawBegin.add(pseudo2);
 		drawBegin.add(bouton);
