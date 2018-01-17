@@ -27,9 +27,10 @@ public class Draw extends JPanel{
 	
 	
 
-	private Game game = new Game(new Character("ju",200,800),new Character("co",1700,800));
+	private Game game = new Game(new Character("25",200,800),new Character("co",1700,800));
+	
 	public Game getGame() {
-		return game;
+		return this.game;
 	}
 
 	public void setGame(Game game) {
@@ -104,14 +105,10 @@ public class Draw extends JPanel{
 	}
 
 	public void addView(ViewArrow createViewArrow) {
-		
-		//System.out.println("hellop");
 		this.vueFormes.clear();
-		
 		this.vueFormes.add(createViewArrow);
 		paintComponent(this.getGraphics());
-		
-		
+			
 	}
 	
 
