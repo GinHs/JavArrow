@@ -131,7 +131,7 @@ public class Game {
 	public void setScorePlayer1(int scorePlayer1) {
 		this.scorePlayer1 = scorePlayer1;
 	}
-	
+	*/
 	public Character getActivePlayer() {
 		return activePlayer;
 	}
@@ -155,7 +155,7 @@ public class Game {
 	public void setPlayer1(Character player1) {
 		this.player1 = player1;
 	}
-*/
+
 	public void win() {
 		this.getActivePlayer();
 		
