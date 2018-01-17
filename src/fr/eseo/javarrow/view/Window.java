@@ -9,9 +9,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import fr.Game;
 import fr.eseo.javarrow.controller.Action;
 import fr.eseo.javarrow.model.Character;
+import fr.eseo.javarrow.model.Game;
 
 
 public class Window extends JFrame{

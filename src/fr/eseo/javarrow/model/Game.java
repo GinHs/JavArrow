@@ -1,4 +1,4 @@
-package fr;
+package fr.eseo.javarrow.model;
 
 import fr.eseo.javarrow.view.Draw;
 import fr.Trajectory;

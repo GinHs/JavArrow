@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import fr.eseo.javarrow.view.Window;
 
 public class Action extends AbstractAction{
-	public static final String NAME_ACTION = "Action";
+	public static final String NAME_ACTION = "Commencer la partie";
 
 	public Action() {
 		super(NAME_ACTION);

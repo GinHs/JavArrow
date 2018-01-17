@@ -6,6 +6,7 @@ import fr.eseo.javarrow.model.Arrow;
 import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
 import fr.eseo.javarrow.view.Window; 
+import fr.eseo.javarrow.model.Game;
 
 public class Trajectory {
 	
@@ -96,9 +97,9 @@ public class Trajectory {
 		System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
 		
 		if (this.draw.getGame().getNotActivePlayer().isReach(i[0][n],i[1][n])) {
-			draw.getGame().win();
+			System.out.println("you win");
 		}else {
-			draw.getGame().changeActivePlayer();
+			draw.getGame();
 		}
 		
 		return i;

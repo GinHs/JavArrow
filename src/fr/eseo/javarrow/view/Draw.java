@@ -15,9 +15,8 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import fr.eseo.javarrow.controller.Controler;
-
-import fr.Game;
 import fr.eseo.javarrow.model.Character;
+import fr.eseo.javarrow.model.Game;
 
 
 public class Draw extends JPanel{
@@ -81,15 +80,22 @@ public class Draw extends JPanel{
 		//g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		//g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
-		Stroke s = g2D.getStroke();
+		//Stroke s = g2D.getStroke();
 		// trait épais
-		g2D.setStroke(new BasicStroke(5)); // Mettre largeur de 5
+		//g2D.setStroke(new BasicStroke(5)); // Mettre largeur de 5
 		g2D.setColor(new Color(51,51,51));
 
 		g2D.drawLine(0,800, 2000, 800); 
 		
 		
+		//g2D.setStroke(s); // Mettre largeur de 5
 
+		//Qui doit jouer.
+		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", 900, 100);
+		
+		//Affichage des scores
+		g2D.drawString("Score : "+player1.getScore(), 100, 100);
+		g2D.drawString("Score : "+player2.getScore(), 1700, 100);
 
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
