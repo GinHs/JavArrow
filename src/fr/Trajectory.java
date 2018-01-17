@@ -9,13 +9,11 @@ import fr.eseo.javarrow.view.Window;
 import fr.eseo.javarrow.model.Game;
 
 public class Trajectory {
-	
 	public Draw draw;
 	public Arrow arrow;
 	public float characterheight = 50;
 	public float t = 0;
 	public int n = 0;
-	
 	
 	public Trajectory (Draw draw,Arrow arrow,int x1,int x2,int y1,int y2) {
 		this.arrow=arrow;
@@ -60,7 +58,7 @@ public class Trajectory {
 	public int[][] calculateTrajectory(float x0,float x1,float x2,float y1,float y2) {
 		int [][] i = new int [2][10000];
 		
-		//On recupère la position des deux joueurs (car elle dépend de la taille de l'écran)
+		//On recupï¿½re la position des deux joueurs (car elle dï¿½pend de la taille de l'ï¿½cran)
 		int PosP1 =(int) this.draw.getGame().getPlayer1().getX();
 		int PosP2 = (int) this.draw.getGame().getPlayer2().getX();
 		
@@ -71,7 +69,7 @@ public class Trajectory {
 			x2=x1+75;
 		}
 		
-		//calcul de la trajectoire avec des parabole (droite parametré)
+		//calcul de la trajectoire avec des parabole (droite parametrï¿½)
 		while(((x1-x2)*t+x0)<(PosP2+1) && ((x1-x2)*t+x0)>(PosP1-1) && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
 		i[0][n]=(int) ((x1-x2)*t+x0);
 		i[1][n]=(int)(-5*t*t+(y1-y2)*t+characterheight);
@@ -79,7 +77,7 @@ public class Trajectory {
 		n++;
 		}
 		
-		//Rectification pour que la dernière fleche soit sur le sol ou les murs
+		//Rectification pour que la derniï¿½re fleche soit sur le sol ou les murs
 		if (n>2) {
 			if (((x1-x2)*t+x0)>PosP2){
 				i[0][n]=PosP2;
@@ -94,11 +92,12 @@ public class Trajectory {
 				i[1][n]=0;
 			}
 		}
+
 		
 		//on retourne la tableau rempli avec les valeurs de latrajectoire de la fleche
 		return i;
 		
 	}
 	
-	
+
 }

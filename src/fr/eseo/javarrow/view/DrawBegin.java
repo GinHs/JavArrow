@@ -8,14 +8,12 @@ import javax.swing.JPanel;
 /**
  * 
  * @author corentin
- * Fenetre d'affichage de début
+ * Fenetre d'affichage de dï¿½but
  */
 public class DrawBegin  extends JPanel{
-	
 	public static int length = 500;
 	public static int height = 500;
 	public static Color Color=new Color(255,255,255);
-
 	
 	public DrawBegin(int largeur,int hauteur, Color fond) {
 		super();
@@ -23,6 +21,5 @@ public class DrawBegin  extends JPanel{
 		super.setPreferredSize(d);
 		super.setBackground(fond);
 		super.setVisible(true);
-		
 	}
 }

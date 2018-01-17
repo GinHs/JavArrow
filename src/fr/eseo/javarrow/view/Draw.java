@@ -25,24 +25,27 @@ import fr.eseo.javarrow.model.Game;
 
 
 public class Draw extends JPanel{
-	
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-
 	public int screenWidth = dim.width;
 	public int screenHeight = dim.height;
-	
-	
-	
 	public static int height = 500;
 	public static int length = 500;
-
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
 	public Game game = new Game(this,new Character("ju",(int)(screenWidth*0.10),(int)(screenHeight*0.74),70,100),new Character("co",screenWidth-(int)(screenWidth*0.10),(int)(screenHeight*0.74),70,100));
-		
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 
+	public Draw(int largeur,int hauteur, Color fond) {
+		super();
+		Dimension d = new Dimension(largeur, hauteur);
+		super.setPreferredSize(d);
+		super.setBackground(fond);
+		super.setVisible(true);
+		System.out.println(screenWidth+" "+screenHeight);
+		
+	}
+	
 	public Controler getControler() {
 		return controler;
 	}
@@ -62,16 +65,6 @@ public class Draw extends JPanel{
 	public void setVueFormes(List<ViewArrow> vueFormes) {
 		this.vueFormes = vueFormes;
 	}
-
-	public Draw(int largeur,int hauteur, Color fond) {
-		super();
-		Dimension d = new Dimension(largeur, hauteur);
-		super.setPreferredSize(d);
-		super.setBackground(fond);
-		super.setVisible(true);
-		System.out.println(screenWidth+" "+screenHeight);
-		
-	}
 	
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
@@ -84,9 +77,9 @@ public class Draw extends JPanel{
 			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
 			if (game.getScorePlayer1()>game.getScorePlayer2()) {
-				g2D.drawString(game.getPlayer1().getName()+" a gagné",200,200);
+				g2D.drawString(game.getPlayer1().getName()+" a gagnï¿½",200,200);
 			}else{
-				g2D.drawString(game.getPlayer2().getName()+" a gagné",200,200);
+				g2D.drawString(game.getPlayer2().getName()+" a gagnï¿½",200,200);
 			}
 		}else{
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");

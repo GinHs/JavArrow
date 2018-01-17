@@ -6,7 +6,6 @@ import fr.eseo.javarrow.model.Arrow;
 
  
 public class ViewArrow {
-	
 	protected final Arrow arrow;
 
 	public ViewArrow(Arrow arrow) {
