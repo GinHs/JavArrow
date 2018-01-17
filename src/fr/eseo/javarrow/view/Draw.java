@@ -68,6 +68,11 @@ public class Draw extends JPanel{
 	
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
+		
+		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		
+		System.out.println(dim);
+		
 		Graphics2D g2D = (Graphics2D)g.create();
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
