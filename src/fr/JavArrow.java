@@ -6,8 +6,6 @@ import fr.eseo.javarrow.view.Window;
 
 
 public class JavArrow {
-
-
 	public JavArrow () {
 		Window window;
     	window = Window.getInstance();

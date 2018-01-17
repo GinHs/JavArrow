@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import fr.eseo.javarrow.model.Character;
 
 public class ViewCharacter {
-
 	protected final Character character; 
 
 	public ViewCharacter(Character character) {
