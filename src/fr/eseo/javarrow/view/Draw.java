@@ -27,7 +27,7 @@ public class Draw extends JPanel{
 	private Controler controler;
 	
 	
-<<<<<<< HEAD
+
 	private Game game = new Game(new Character("ju",100,800),new Character("co",1800,800));
 	public Game getGame() {
 		return game;
@@ -37,9 +37,7 @@ public class Draw extends JPanel{
 		this.game = game;
 	}
 
-=======
-	private Game game = new Game(new Character("Faker",100,800),new Character("Yellowstar",1800,800));
->>>>>>> branch 'master' of https://github.com/GinHs/JavArrow.git
+
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
 

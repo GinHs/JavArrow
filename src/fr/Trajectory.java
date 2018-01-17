@@ -24,7 +24,7 @@ public class Trajectory {
 			System.out.println("/n x1 : "+tab[0][j-1]);
 			System.out.println("/n y1 : "+tab[1][j-1]);
 			System.out.println("/n x1 : "+tab[0][j+1]);
-<<<<<<< HEAD
+
 			System.out.println("/n y1 : "+tab[1][j+1]);*/
 			try {
 				Thread.sleep(25);
@@ -32,9 +32,7 @@ public class Trajectory {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-=======
-			System.out.println("/n y1 : "+tab[1][j+1]);*/ 
->>>>>>> branch 'master' of https://github.com/GinHs/JavArrow.git
+
 			this.draw.addView(new ViewArrow(arrow));
 			j++;
 		}
