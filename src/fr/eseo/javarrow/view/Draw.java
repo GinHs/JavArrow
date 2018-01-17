@@ -79,17 +79,26 @@ public class Draw extends JPanel{
 			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
 			if (game.getScorePlayer1()>game.getScorePlayer2()) {
-				g2D.drawString(game.getPlayer1().getName()+" a gagn�",200,200);
+				g2D.drawString(game.getPlayer1().getName()+" a gagne",200,200);
 			}else{
-				g2D.drawString(game.getPlayer2().getName()+" a gagn�",200,200);
+				g2D.drawString(game.getPlayer2().getName()+" a gagne",200,200);
 			}
 		}else{
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
 		Character character = this.getGame().getPlayer1();
 		Character character2 = this.getGame().getPlayer2();
-	    g2D.drawImage(img1, (int)character.getX()-25, (int)character.getY()-100,(int)character.width,(int)character.height, this);
-	    g2D.drawImage(img2, (int)character2.getX()-40, (int)character2.getY()-100,(int)character2.width,(int)character2.height, this);
+	    g2D.drawImage(img1, 
+	    		(int)character.getX()-25, 
+	    		(int)character.getY()-100,
+	    		(int)character.width,
+	    		(int)character.height, this);
+	    
+	    g2D.drawImage(img2, 
+	    		(int)character2.getX()-40, 
+	    		(int)character2.getY()-100,
+	    		(int)character2.width,
+	    		(int)character2.height, this);
 	    
 	    g2D.finalize();
 	
