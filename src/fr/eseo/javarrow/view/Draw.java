@@ -3,6 +3,7 @@ package fr.eseo.javarrow.view;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -88,7 +89,8 @@ public class Draw extends JPanel{
 	    
 	    g2D.finalize();
 		
-
+	    Font fonte = new Font("TimesRoman ",Font.BOLD,30);
+	    g2D.setFont(fonte);
 		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
