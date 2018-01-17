@@ -40,6 +40,13 @@ public class Trajectory {
 			j++;
 		}
 		
+		if (this.draw.getGame().getNotActivePlayer().isReach(tab[0][j],tab[1][j])) {
+			draw.getGame().increaseRound();
+		}else {
+			draw.getGame().changeActivePlayer();;
+		}
+		this.draw.repaint();
+		
 		
 	}
 	Draw draw;
@@ -96,11 +103,7 @@ public class Trajectory {
 		System.out.println("player aimed"+this.draw.getGame().getNotActivePlayer().getX());
 		System.out.println("arrow x: "+i[0][n]+" y : "+i[1][n]);
 		
-		if (this.draw.getGame().getNotActivePlayer().isReach(i[0][n],i[1][n])) {
-			draw.getGame().increaseRound();
-		}else {
-			draw.getGame().changeActivePlayer();;
-		}
+		
 		
 		return i;
 		

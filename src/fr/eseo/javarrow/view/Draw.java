@@ -77,8 +77,8 @@ public class Draw extends JPanel{
 		new ViewCharacter(player2).affiche(g2D);
 		
 
-		//g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
-		//g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
+		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
+		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
 		//Stroke s = g2D.getStroke();
 		// trait épais
