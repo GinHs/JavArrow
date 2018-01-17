@@ -77,7 +77,7 @@ public class Character {
 		return score;
 	}
 	
-	public void setNbWin(int score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
 
