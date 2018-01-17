@@ -95,8 +95,8 @@ public class Draw extends JPanel{
 		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", 900, 100);
 		
 		//Affichage des scores
-		g2D.drawString("Score : "+game.getScorePlayer1(), 100, 100);
-		g2D.drawString("Score : "+game.getScorePlayer2(), 1700, 100);
+		g2D.drawString("Score : "+player1.getScore(), 100, 100);
+		g2D.drawString("Score : "+player2.getScore(), 1700, 100);
 
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
