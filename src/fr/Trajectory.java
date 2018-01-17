@@ -52,6 +52,8 @@ public class Trajectory {
 	
 	public int[][] calculateTrajectory(float x0,float x1,float x2,float y1,float y2) {
 		int [][] i = new int [2][10000];
+		
+		//On recupère la position des deux joueurs (car elle dépend de la taille de l'écran)
 		int PosP1 =(int) this.draw.getGame().getPlayer1().getX();
 		int PosP2 = (int) this.draw.getGame().getPlayer2().getX();
 		
@@ -62,15 +64,16 @@ public class Trajectory {
 			x2=x1+75;
 		}
 		
-		//calcul de la trajectoire
+		//calcul de la trajectoire avec des parabole (droite parametré)
 		while(((x1-x2)*t+x0)<(PosP2+1) && ((x1-x2)*t+x0)>(PosP1-1) && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
 		i[0][n]=(int) ((x1-x2)*t+x0);
 		i[1][n]=(int)(-5*t*t+(y1-y2)*t+characterheight);
 		t=(float) (t+0.25);
 		n++;
 		}
-		if (n>2) {
+		
 		//Rectification pour que la dernière fleche soit sur le sol ou les murs
+		if (n>2) {
 			if (((x1-x2)*t+x0)>PosP2){
 				i[0][n]=PosP2;
 				i[1][n]=i[1][n-1]+(-i[1][n-2]+i[1][n-1]);

@@ -79,7 +79,7 @@ public class Draw extends JPanel{
 		Graphics2D g2D = (Graphics2D)g.create();
 		
 		if (win) {
-			Font fonte = new Font("TimesRoman ",Font.BOLD,100);
+			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
 			if (game.getScorePlayer1()>game.getScorePlayer2()) {
 				g2D.drawString(game.getPlayer1().getName()+" a gagné",200,200);
