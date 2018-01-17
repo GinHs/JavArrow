@@ -70,7 +70,7 @@ public class Trajectory {
 		}
 		
 		//calcul de la trajectoire avec des parabole (droite parametre)
-		System.out.println("PosP2 : "+PosP2);
+		//System.out.println("PosP2 : "+PosP2);
 		
 		while(((x1-x2)*t+x0)<(PosP2+1) && ((x1-x2)*t+x0)>(PosP1-1) && (-5*t*t+(y1-y2)*t+characterheight)<4000 && 0<(-5*t*t+(y1-y2)*t+characterheight) ) {
 		i[0][n]=(int) ((x1-x2)*t+x0);
