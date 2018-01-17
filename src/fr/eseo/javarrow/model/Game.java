@@ -174,7 +174,12 @@ public class Game {
 			this.setActivePlayer(player1);
 		}
 		}else {
-			System.out.println("Vous avez gagné");
+			if (this.getScorePlayer1()>this.getScorePlayer2()) {
+				System.out.println(this.getPlayer1().getName()+"a gagné");
+			}else {
+				System.out.println(this.getPlayer2().getName()+"a gagné");
+			}
+			
 		}
 		
 		
