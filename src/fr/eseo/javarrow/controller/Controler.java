@@ -11,7 +11,7 @@ import fr.eseo.javarrow.view.ViewArrow;
  
 
 public class Controler implements MouseListener,MouseMotionListener{
-	
+	 
 	
 	public Controler(Draw draw){
 		this.draw = draw;

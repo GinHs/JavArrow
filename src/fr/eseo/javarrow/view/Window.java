@@ -42,25 +42,7 @@ public class Window extends JFrame{
 		menuBar.add(fichierMenu);
 		JMenuItem ouvrirMenu = new JMenuItem(new Action());
 		fichierMenu.add(ouvrirMenu);
-		/*
-		JLabel label1 = new JLabel();
-	    label1.setText(game.getPlayer1().getName());
-	    label1.setBounds(
-	    		(int)game.getPlayer1().getX(), 
-				(int)game.getPlayer1().getY() - (int)game.getPlayer1().getHeight()-100,
-				50,50);
-	    
-	    JLabel label2 = new JLabel();
-	    label2.setText(game.getPlayer2().getName());
-	    label2.setBounds(
-	    		(int)game.getPlayer2().getX(), 
-				(int)game.getPlayer2().getY() - (int)game.getPlayer2().getHeight()-500,
-				50,50);
-	    
-		add(label1);
-		add(label2);
 		
-		*/
 		this.repaint();
 	
 }
