@@ -28,8 +28,8 @@ public class Draw extends JPanel{
 	
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 
-	int screenWidth = dim.width;
-	int screenHeight = dim.height;
+	public int screenWidth = dim.width;
+	public int screenHeight = dim.height;
 	
 	
 	
