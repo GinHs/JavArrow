@@ -1,5 +1,7 @@
 package fr.eseo.javarrow.controller;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -12,7 +14,9 @@ import fr.eseo.javarrow.view.ViewArrow;
  
 
 public class Controler implements MouseListener,MouseMotionListener{
-	 
+	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+	int screenWidth = gd.getDisplayMode().getWidth();
+	int screenHeight = gd.getDisplayMode().getHeight(); 
 	
 	public Controler(Draw draw){
 		this.draw = draw;
@@ -70,6 +74,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 		}
 		
 	}
+	
 	public void mouseEntered(MouseEvent e){
 		
 	}
@@ -77,17 +82,27 @@ public class Controler implements MouseListener,MouseMotionListener{
 	public void mouseExited(MouseEvent e){
 		
 	}
-
 		
 	public void associate(Draw draw){
-			this.getDraw().setControler(this);
-			this.getDraw().addMouseListener(this);
-			this.getDraw().addMouseMotionListener(this);
-		}
+		this.getDraw().setControler(this);
+		this.getDraw().addMouseListener(this);
+		this.getDraw().addMouseMotionListener(this);
+	}
 
+	public int calculateRelativeLength(int length) {
+		double relativeLength;
+		relativeLength = (0.8 * this.getScreenWidth() * length) / (this.getDraw().getWidth());
+		return (int) relativeLength;
+	}
 	
+	public int getScreenWidth() {
+		return this.screenWidth;
+	}
 	
-
+	public int getScreenHeight() {
+		return this.screenHeight;
+	}
+	
 	
 	
 }
