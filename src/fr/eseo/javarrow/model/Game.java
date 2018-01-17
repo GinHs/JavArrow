@@ -10,7 +10,7 @@ import java.awt.Graphics2D;
 import fr.Trajectory;
 
 public class Game {
-	private static final int ROUNDMAX = 2;
+	private static final int ROUNDMAX = 1;
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
@@ -182,17 +182,8 @@ public class Game {
 			this.setActivePlayer(player1);
 		}
 		}else {
-			draw.removeAll();
-			Graphics g = draw.getGraphics();
-			Graphics2D g2D = (Graphics2D)g.create();
-			Font fonte = new Font("TimesRoman ",Font.BOLD,60);
-		    g2D.setFont(fonte);
-		    System.out.println("win");
-			if (this.getScorePlayer1()>this.getScorePlayer2()) {
-				g2D.drawString(this.getPlayer1().getName()+"a gagné",200,200);
-			}else {
-				g2D.drawString(this.getPlayer2().getName()+"a gagné",200,200);
-			}
+			draw.win = true;
+			System.out.println("win");
 			
 			
 		}
