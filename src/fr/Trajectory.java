@@ -28,19 +28,26 @@ public class Trajectory {
 	public void Traject(float pos,int x1,int x2,int y1,int y2){
 		int [][]tab=calculateTrajectory((float)pos,(float)x1,(float)x2,(float)y1,(float)y2);
 		int j=1;
+		
+		//Ajout des vues de fleche après avoir calculer le tableau de la trajectoire
 		while (j<tab[0].length-1 && !(tab[0][j+1]==0 && tab[1][j+1]==0)) {
 			Arrow arrow = new Arrow(tab[0][j-1],tab[1][j-1],tab[0][j+1],tab[1][j+1]);
+			
+			//Pause de 25ms entre chaque nouvelle fleche
 			try {
 				Thread.sleep(25);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-
+			//On ajoute la nouvelle vue
 			this.draw.addView(new ViewArrow(arrow));
+			//On actualise le paintcomponent pour afficher correctement la fleche
 			this.draw.paintComponent(this.draw.getGraphics());
 			j++;
 		}
 		
+		//On test si le joueur est touché ou non
+		//si il est touché on fini le round, sinon on change de joueur
 		if (this.draw.getGame().getNotActivePlayer().isReach(tab[0][j],tab[1][j])) {
 			draw.getGame().increaseRound();
 		}else {
@@ -58,9 +65,9 @@ public class Trajectory {
 		int PosP2 = (int) this.draw.getGame().getPlayer2().getX();
 		
 		//Limitation de la force maximum pour rendre le jeu plus difficile
-		if ((x1-x2)>75) {
+		if ((x1-x2)*1080/this.draw.screenWidth>75) {
 			x2=x1-75;
-		} else if ((x1-x2)<-75){
+		} else if ((x1-x2)*1080/this.draw.screenWidth<-75){
 			x2=x1+75;
 		}
 		
@@ -87,7 +94,8 @@ public class Trajectory {
 				i[1][n]=0;
 			}
 		}
-			
+		
+		//on retourne la tableau rempli avec les valeurs de latrajectoire de la fleche
 		return i;
 		
 	}
