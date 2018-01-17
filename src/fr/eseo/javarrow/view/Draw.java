@@ -25,15 +25,20 @@ import fr.eseo.javarrow.model.Game;
 
 
 public class Draw extends JPanel{
-	GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-	int screenWidth = gd.getDisplayMode().getWidth();
-	int screenHeight = gd.getDisplayMode().getHeight();
 	
-	public static int length = 500;
+	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+
+	int screenWidth = dim.width;
+	int screenHeight = dim.height;
+	
+	
+	
 	public static int height = 500;
+	public static int length = 500;
+
 	public static Color Color=new Color(255,255,255);
 	private Controler controler;
-	public Game game = new Game(this,new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
+	public Game game = new Game(this,new Character("ju",200,(int)(screenHeight*0.74),70,100),new Character("co",screenWidth-200,(int)(screenHeight*0.74),70,100));
 		
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
@@ -47,7 +52,7 @@ public class Draw extends JPanel{
 	}
 
 	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
-	public boolean win=false;
+	public boolean win=false; 
 	
 	
 	public List<ViewArrow> getVueFormes() {
@@ -64,17 +69,14 @@ public class Draw extends JPanel{
 		super.setPreferredSize(d);
 		super.setBackground(fond);
 		super.setVisible(true);
+		System.out.println(screenWidth+" "+screenHeight);
 		
 	}
 	
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		
-		Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 		
-		System.out.println(dim);
-		int width = dim.width;
-		int height = dim.height;
 
 		Graphics2D g2D = (Graphics2D)g.create();
 		
@@ -109,12 +111,12 @@ public class Draw extends JPanel{
 		g2D.drawLine(0,800, 2000, 800); 
 		
 		//Qui doit jouer.
-		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", width/2-200, 100);
-		g2D.drawString("ROUND : "+game.getRound(), width/2-150, 50);
+		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", screenWidth/2-200, 100);
+		g2D.drawString("ROUND : "+game.getRound(), screenWidth/2-150, 50);
 		
 		//Affichage des scores
 		g2D.drawString("Score : "+this.game.getScorePlayer1(), 100, 100);
-		g2D.drawString("Score : "+this.game.getScorePlayer2(), width-300, 100);
+		g2D.drawString("Score : "+this.game.getScorePlayer2(), screenWidth-300, 100);
 		g2D.dispose();
 	
 	}}
