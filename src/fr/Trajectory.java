@@ -42,6 +42,7 @@ public class Trajectory {
 		
 		if (this.draw.getGame().getNotActivePlayer().isReach(tab[0][j],tab[1][j])) {
 			draw.getGame().increaseRound();
+			System.out.println("Vous avez gagné");
 		}else {
 			draw.getGame().changeActivePlayer();;
 		}
@@ -85,7 +86,7 @@ public class Trajectory {
 		t=(float) (t+0.25);
 		n++;
 		}
-		
+		if (n>2) {
 		//Rectification pour que la dernière fleche soit sur le sol ou les murs
 		if (((x1-x2)*t+x0)>PosP2){
 			i[0][n]=PosP2;
@@ -98,6 +99,7 @@ public class Trajectory {
 		if (0>(-5*t*t+(y1-y2)*t+characterheight)) {
 			i[0][n]=i[0][n-1]+(-i[0][n-2]+i[0][n-1]);
 			i[1][n]=0;
+		}
 		}
 		
 		System.out.println("player aimed"+this.draw.getGame().getNotActivePlayer().getX());

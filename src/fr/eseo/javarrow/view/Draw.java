@@ -5,7 +5,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Stroke;
+import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
@@ -27,7 +29,7 @@ public class Draw extends JPanel{
 	
 	
 
-	private Game game = new Game(new Character("ju",200,800),new Character("co",1700,800));
+	private Game game = new Game(new Character("ju",200,800,70,100),new Character("co",1700,800,70,100));
 	public Game getGame() {
 		return game;
 	}
@@ -73,14 +75,25 @@ public class Draw extends JPanel{
 		super.paintComponent(g);
 		Graphics2D g2D = (Graphics2D)g.create();
 		
-		new ViewCharacter(player1).affiche(g2D);
-		new ViewCharacter(player2).affiche(g2D);
+
+		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
+		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
+		Character character = this.getGame().getPlayer1();
+		Character character2 = this.getGame().getPlayer2();
+	    g2D.drawImage(img1, (int)character.getX()-25, (int)character.getY()-100,(int)character.width,(int)character.height, this);
+	    g2D.drawImage(img2, (int)character2.getX()-50, (int)character2.getY()-100,(int)character2.width,(int)character2.height, this);
+	    
+	    
+	    g2D.finalize();
 		
 
 		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
-		//Stroke s = g2D.getStroke();
+		for(int i=0;i<vueFormes.size();i++)
+			this.vueFormes.get(i).affiche(g2D);
+		 
+		Stroke s = g2D.getStroke();
 		// trait épais
 		//g2D.setStroke(new BasicStroke(5)); // Mettre largeur de 5
 		g2D.setColor(new Color(51,51,51));
@@ -97,9 +110,7 @@ public class Draw extends JPanel{
 		g2D.drawString("Score : "+player1.getScore(), 100, 100);
 		g2D.drawString("Score : "+player2.getScore(), 1700, 100);
 
-		for(int i=0;i<vueFormes.size();i++)
-			this.vueFormes.get(i).affiche(g2D);
-		g2D.dispose(); 
+		g2D.dispose();
 	
 	}
 
