@@ -169,6 +169,11 @@ public class Game {
 	}
 
 	public void increaseRound() {
+		if(this.activePlayer==this.player1) {
+			this.setScorePlayer1(this.getScorePlayer1()+1);
+		}else {
+			this.setScorePlayer2(this.getScorePlayer2()+1);
+		}
 		if (round != ROUNDMAX) {
 		this.round++;
 		if(this.activePlayer==this.player1) {
@@ -183,7 +188,9 @@ public class Game {
 		}
 		}else {
 			draw.win = true;
-			System.out.println("win");
+			/*System.out.println(this.getPlayer1().getName()+" : "+this.getScorePlayer1());
+		    System.out.println(this.getPlayer2().getName()+" : "+this.getScorePlayer2());
+			System.out.println("win");*/
 			
 			
 		}
