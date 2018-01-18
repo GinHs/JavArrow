@@ -25,7 +25,7 @@ public class Window extends JFrame{
 	
 	private Window() {
 		super(TITRE_PAR_DEFAUT);
-		this.setPreferredSize(new Dimension(draw.screenWidth/4,draw.screenHeight/2));
+		this.setPreferredSize(new Dimension(draw.screenWidth/4,draw.screenHeight/6));
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE) ;
 		this.setLayout(new BorderLayout());
 		this.add(drawBegin,BorderLayout.CENTER);

@@ -24,8 +24,8 @@ public class Controler implements MouseListener,MouseMotionListener{
 	private int y2;
 	private Arrow a = new Arrow(0,0,0,0);
 	int p =101;
-	int sol = 800;
-	int height =100;
+	int sol = 800*this.screenHeight/1080;
+	int height =100*this.screenWidth/1920;
 	
 	public Controler(Draw draw){
 		this.draw = draw;
@@ -63,6 +63,7 @@ public class Controler implements MouseListener,MouseMotionListener{
 	}
 	
 	public void mouseDragged(MouseEvent e){
+		
 		p=(int)this.draw.getGame().getActivePlayer().getX();
 		sol=(int)this.draw.getGame().getActivePlayer().getY();
 		height = (int)this.draw.getGame().getActivePlayer().getHeight();

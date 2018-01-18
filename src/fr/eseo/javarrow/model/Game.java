@@ -10,7 +10,7 @@ import java.awt.Graphics2D;
 import fr.Trajectory;
 
 public class Game {
-	private static final int ROUNDMAX = 1;
+	private static final int ROUNDMAX = 5;
 	private Character player1;
 	private Character player2;
 	private Character activePlayer;
