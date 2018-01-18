@@ -15,9 +15,9 @@ public class Game {
 	
 	/**
 	 * Constructeur de Game
-	 * @param draw
-	 * @param player1
-	 * @param player2
+	 * @param draw Jpanel
+	 * @param player1 Character du joueur 1
+	 * @param player2 Character du joueur 2
 	 */
 	public Game(Draw draw,Character player1, Character player2) {
 		this.draw=draw;

@@ -12,7 +12,7 @@ public class ViewArrow {
 
 	/**
 	 * Constructeur de la vue d'une fleche
-	 * @param arrow
+	 * @param arrow fleche
 	 */
 	public ViewArrow(Arrow arrow) {
 		this.arrow = arrow;
@@ -23,7 +23,7 @@ public class ViewArrow {
 	}
 	/**
 	 * Crée une ligne représentant la flèche
-	 * @param g2d
+	 * @param g2d graphics en 2d
 	 */
 	public void affiche(Graphics2D g2d) {
 		g2d.drawLine((int)arrow.getX1(), ytoY((int)arrow.getY1()),(int)arrow.getX2(),ytoY((int) arrow.getY2()));

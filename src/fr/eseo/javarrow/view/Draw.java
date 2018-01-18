@@ -46,9 +46,9 @@ public class Draw extends JPanel{
 	
 	/**
 	 * Constructeur du panneau d'affichage du jeu
-	 * @param largeur
-	 * @param hauteur
-	 * @param fond
+	 * @param largeur int largeur
+	 * @param hauteur int hauteur
+	 * @param fond couleur du fond
 	 */
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
@@ -138,7 +138,7 @@ public class Draw extends JPanel{
 
 	/**
 	 * Ajoute une vue de flèche à la liste vueFormes
-	 * @param createViewArrow 
+	 * @param createViewArrow creation de la vue de la fleche 
 	 */
 
 	public void addView(ViewArrow createViewArrow) {
