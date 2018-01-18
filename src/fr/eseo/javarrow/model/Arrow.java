@@ -6,7 +6,6 @@ public class Arrow {
 	private float y1;
 	private float x2;
 	private float y2;
-	private float length = 10;
 	
 	public Arrow(float x1, float y1,float x2,float y2) {
 		super();

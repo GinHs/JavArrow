@@ -1,15 +1,7 @@
 package fr.eseo.javarrow.model;
 
 import fr.eseo.javarrow.view.Draw;
-import fr.eseo.javarrow.view.Window;
 
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
-
-import fr.Trajectory;
 
 public class Game {
 	private static final int ROUNDMAX = 5;
@@ -21,7 +13,12 @@ public class Game {
 	private int scorePlayer2;
 	private Draw draw;
 	
-	
+	/**
+	 * Constructeur de Game
+	 * @param draw
+	 * @param player1
+	 * @param player2
+	 */
 	public Game(Draw draw,Character player1, Character player2) {
 		this.draw=draw;
 		this.setPlayer1(player1);
@@ -33,12 +30,15 @@ public class Game {
 		
 	}
 	
+	/**
+	 * Cette fonction est appele lors de la fin d'une manche
+	 * Elle actualise le score du joueur qui a gagne
+	 * Elle check le nombre de round, elle arrete la partie si c'est le dernier
+	 * Elle change un round sur deux le premier joueur de la manche 
+	 * 
+	 */
+	
 	public void increaseRound() {
-		/**Cette fonction est appele lors de la fin d'une manche
-		 *Elle actualise le score du joueur qui a gagne
-		 *Elle check le nombre de round, elle arrete la partie si c'est le dernier
-		 *Elle change un round sur deux le premier joueur de la manche 
-		 */
 		if(this.activePlayer==this.player1) {
 			this.setScorePlayer1(this.getScorePlayer1()+1);
 		}else {
@@ -62,10 +62,10 @@ public class Game {
 		}
 		}
 	
+	/**
+	 * Cette fonction permet de changer de joueur (Joueur actif)
+	 */
 	public void changeActivePlayer() {
-		/**
-		 * Cette fonction permet de changer de joueur (Joueur actif)
-		 */
 		if(this.getActivePlayer().equals(this.getPlayer1())) {
 			this.setActivePlayer(this.getPlayer2());
 		} else {
@@ -74,11 +74,11 @@ public class Game {
 	}
 	
 
-	
+	/**
+	 * Cette fonction permet de recuperer le joueur qui ne joue pas (Joueur qui est vise)
+	 * @return le joueur non actif
+	 */
 	public Character getNotActivePlayer() {
-		/**
-		 * Cette fonction permet de recuperer le joueur qui ne joue pas (Joueur qui est vise)
-		 */
 		if(this.getActivePlayer().equals(this.getPlayer1())) {
 			return this.getPlayer2();
 		} else {

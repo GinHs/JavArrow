@@ -10,10 +10,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import fr.eseo.javarrow.controller.LaunchGameAction;
-import fr.eseo.javarrow.model.Character;
-import fr.eseo.javarrow.model.Game;
 
 
+/**
+ * 
+ * Classe de la fenetre d'affichage
+ *
+ */
 public class Window extends JFrame{
 	private static final long serialVersionUID = 1L;
 	public static final String TITRE_PAR_DEFAUT = "JavArrow";
@@ -23,6 +26,9 @@ public class Window extends JFrame{
 	public JTextField pseudo1 = new JTextField("Pseudo1",20);
 	public JTextField pseudo2 = new JTextField("Pseudo2",20);
 	
+	/**
+	 * Construteur de la classe Window
+	 */
 	private Window() {
 		super(TITRE_PAR_DEFAUT);
 		this.setPreferredSize(new Dimension(draw.screenWidth/4,draw.screenHeight/6));
@@ -46,7 +52,10 @@ public class Window extends JFrame{
  
 		this.repaint();
 	}
-	
+	/**
+	 * Cree une instance
+	 * @return une instance de la fenetre
+	 */
 	public static Window getInstance(){
 		return instance;
 	}

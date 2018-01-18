@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Stroke;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,10 @@ import fr.eseo.javarrow.controller.Controler;
 import fr.eseo.javarrow.model.Character;
 import fr.eseo.javarrow.model.Game;
 
-
+/**
+ * Panneau d'affichage du jeu
+ */
+@SuppressWarnings("serial")
 public class Draw extends JPanel{
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public int screenWidth = dim.width;
@@ -42,6 +44,12 @@ public class Draw extends JPanel{
 	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
 	public boolean win = false; 
 	
+	/**
+	 * Constructeur du panneau d'affichage du jeu
+	 * @param largeur
+	 * @param hauteur
+	 * @param fond
+	 */
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
 		Dimension d = new Dimension(largeur, hauteur);
@@ -50,7 +58,9 @@ public class Draw extends JPanel{
 		super.setVisible(true);
 	}
 	
-		
+		/**
+		 * Création du panneau d'affichage avec les différents éléments
+		 */
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		
@@ -115,12 +125,22 @@ public class Draw extends JPanel{
 	
 	}}
 
+/**
+ * Permet le rafraichissement de l'image sans rafraichir tout l'affichage
+ * @param g
+ */
 	public void refresh(Graphics g) {
 		Graphics2D g2D = (Graphics2D)g.create();
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
 		
 	}
+
+	/**
+	 * Ajoute une vue de flèche à la liste vueFormes
+	 * @param createViewArrow
+	 */
+
 	public void addView(ViewArrow createViewArrow) {
 		this.vueFormes.clear();
 		this.vueFormes.add(createViewArrow);
