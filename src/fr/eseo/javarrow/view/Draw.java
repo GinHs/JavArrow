@@ -127,7 +127,7 @@ public class Draw extends JPanel{
 
 /**
  * Permet le rafraichissement de l'image sans rafraichir tout l'affichage
- * @param g
+ * @param g Graphics du Jpanel
  */
 	public void refresh(Graphics g) {
 		Graphics2D g2D = (Graphics2D)g.create();
@@ -138,7 +138,7 @@ public class Draw extends JPanel{
 
 	/**
 	 * Ajoute une vue de flèche à la liste vueFormes
-	 * @param createViewArrow
+	 * @param createViewArrow 
 	 */
 
 	public void addView(ViewArrow createViewArrow) {
