@@ -48,15 +48,7 @@ public class Draw extends JPanel{
 		super.setVisible(true);
 	}
 	
-	
-	public List<ViewArrow> getVueFormes() {
-		return vueFormes;
-	}
-
-	public void setVueFormes(List<ViewArrow> vueFormes) {
-		this.vueFormes = vueFormes;
-	}
-	
+		
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		
@@ -118,11 +110,7 @@ public class Draw extends JPanel{
 		this.vueFormes.add(createViewArrow);
 		this.repaint();
 		}
-	
-	public int calculateRelativeLength(int length) {
-		return 0;
-	}
-	
+		
 	public int getScreenWidth() {
 		return this.screenWidth;
 	}
@@ -145,6 +133,14 @@ public class Draw extends JPanel{
 
 	public void setControler(Controler controler) {
 		this.controler = controler;
+	}
+	
+	public List<ViewArrow> getVueFormes() {
+		return vueFormes;
+	}
+
+	public void setVueFormes(List<ViewArrow> vueFormes) {
+		this.vueFormes = vueFormes;
 	}
 
 	
