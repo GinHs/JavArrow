@@ -2,6 +2,8 @@ package fr;
 import java.io.*;
 import java.util.List;
 
+import javax.swing.Timer;
+
 import fr.eseo.javarrow.model.Arrow;
 import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
@@ -37,6 +39,7 @@ public class Trajectory {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			
 			//On ajoute la nouvelle vue
 			this.draw.addView(new ViewArrow(arrow));
 			//On actualise le paintcomponent pour afficher correctement la fleche

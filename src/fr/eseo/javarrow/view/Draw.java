@@ -22,7 +22,7 @@ public class Draw extends JPanel{
 	public int screenHeight = dim.height;
 	public static int height = 500;
 	public static int length = 500;
-	public static Color Color=new Color(255,255,255);
+	public static Color Color = new Color(255,255,255);
 	private Controler controler;
 	
 	public Game game = new Game(this,
@@ -35,30 +35,18 @@ public class Draw extends JPanel{
 					(int)(0.0644*screenHeight),
 					(int)(0.092*screenHeight)));
 	
-	
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
-
+	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
+	public boolean win = false; 
+	
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
 		Dimension d = new Dimension(largeur, hauteur);
 		super.setPreferredSize(d);
 		super.setBackground(fond);
 		super.setVisible(true);
-		System.out.println(screenWidth+" "+screenHeight);
-		
 	}
-	
-	public Controler getControler() {
-		return controler;
-	}
-
-	public void setControler(Controler controler) {
-		this.controler = controler;
-	}
-
-	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
-	public boolean win=false; 
 	
 	
 	public List<ViewArrow> getVueFormes() {
@@ -72,8 +60,6 @@ public class Draw extends JPanel{
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		
-		
-
 		Graphics2D g2D = (Graphics2D)g.create();
 		if (win) {
 			Font fonte = new Font("Arial",Font.BOLD,100);
@@ -151,6 +137,14 @@ public class Draw extends JPanel{
 
 	public void setGame(Game game) {
 		this.game = game;
+	}
+	
+	public Controler getControler() {
+		return controler;
+	}
+
+	public void setControler(Controler controler) {
+		this.controler = controler;
 	}
 
 	
