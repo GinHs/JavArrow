@@ -1,11 +1,13 @@
 package fr.eseo.javarrow.view;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Stroke;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
@@ -86,10 +88,12 @@ public class Draw extends JPanel{
 				g2D.drawString(game.getPlayer2().getName()+" a gagne",200,200);
 			}
 		}else{
+		Image img = Toolkit.getDefaultToolkit().getImage("image/fond.jpg");
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
 		Character character = this.getGame().getPlayer1();
 		Character character2 = this.getGame().getPlayer2();
+		g2D.drawImage(img,0,0,this);
 	    g2D.drawImage(img1, 
 	    		(int)character.getX()-25, 
 	    		(int)character.getY()-100,
@@ -106,6 +110,7 @@ public class Draw extends JPanel{
 	
 	    Font fonte = new Font("TimesRoman ",Font.BOLD,30);
 	    g2D.setFont(fonte);
+	    g2D.setStroke(new BasicStroke(3.0f));
 
 		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);

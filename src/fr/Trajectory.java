@@ -23,11 +23,26 @@ public class Trajectory {
 		Traject(this.draw.getGame().getActivePlayer().getX(),x1,x2,sol-y1,sol-y2);
 	}
 	
+	
+	
+	/**
+	 * 
+	 * Cette fonction affiche la trajectoire selon les valeurs initiales du tir du joueur
+	 * Elle appelle la fonction @see calculateTrajectory et affiche ensuite le tableau
+	 *
+	 *@param pos position du joueur qui est en train de joué
+	 *@param x1 Abcsisse du premier point de contact du joueur
+	 *@param y1 Ordonne du premier point de contact du joueur
+	 *@param x2 Abscisse du point de relache du joueur
+	 *@param y2 Ordonne du point de relache du joueur
+	 *
+	 */
 	public void Traject(float pos,int x1,int x2,int y1,int y2){
+	
 		int [][]tab=calculateTrajectory((float)pos,(float)x1,(float)x2,(float)y1,(float)y2);
 		int j=1;
 		
-		//Ajout des vues de fleche après avoir calculer le tableau de la trajectoire
+		//Ajout des vues de fleche apres avoir calculé le tableau de la trajectoire
 		while (j<tab[0].length-1 && !(tab[0][j+1]==0 && tab[1][j+1]==0)) {
 			Arrow arrow = new Arrow(tab[0][j-1],tab[1][j-1],tab[0][j+1],tab[1][j+1]);
 			
@@ -44,8 +59,8 @@ public class Trajectory {
 			j++;
 		}
 		
-		//On test si le joueur est touché ou non
-		//si il est touché on fini le round, sinon on change de joueur
+		//On test si le joueur est touche ou non
+		//si il est touche on fini le round, sinon on change de joueur
 		if (this.draw.getGame().getNotActivePlayer().isReach(tab[0][j],tab[1][j])) {
 			draw.getGame().increaseRound();
 		}else {
@@ -56,6 +71,8 @@ public class Trajectory {
 	}
 	
 	public int[][] calculateTrajectory(float x0,float x1,float x2,float y1,float y2) {
+		//Fonction renvoyant un tableau avec tout les points de la trajectoire 
+		// en fonction des valeurs initiales
 		int [][] i = new int [2][10000];
 		
 		//On recupere la position des deux joueurs (car elle depend de la taille de l'ecran)
@@ -64,9 +81,9 @@ public class Trajectory {
 		
 		//Limitation de la force maximum pour rendre le jeu plus difficile
 		if ((x1-x2)*1080/this.draw.screenWidth>75) {
-			x2=x1-75;
+			x2=x1-75*this.draw.screenWidth/1080;
 		} else if ((x1-x2)*1080/this.draw.screenWidth<-75){
-			x2=x1+75;
+			x2=x1+75*this.draw.screenWidth/1080;
 		}
 		
 		//calcul de la trajectoire avec des parabole (droite parametre)

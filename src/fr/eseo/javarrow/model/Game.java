@@ -17,11 +17,8 @@ public class Game {
 	private int round;
 	private int scorePlayer1;
 	private int scorePlayer2;
-	private Draw JPanelGame;
-	private Draw JPanelPlayer1;
-	private Draw JPanelPlayer2;
 	private Draw draw;
-	//private Trajectory trajectory;
+	
 	
 	public Game(Draw draw,Character player1, Character player2) {
 		this.draw=draw;
@@ -33,33 +30,36 @@ public class Game {
 		this.setScorePlayer2(0);
 	}
 	
-	public void activePlayerAiming(int position, int x1, int x2, int y1, int y2) {
-		Arrow a = new Arrow(0,0,0,0);
-		new Trajectory(this.JPanelGame,a, x1, x2, y1, y2);
-		//construction et envoi du JPanel
-		//sendToActivePlayer(this.drawAimingPanel(aimingTrajectory));
-	}
-	
-	public void activePlayerShooting(int deltaX, int deltaY) {
-		/*this.setTrajectory(new Trajectory(deltaX, deltaY));
-		sendToPlayers(this.drawingAnimationPanel());*/
-	}
-	
-	/* JPanel pour l'animation flèche */
-	public Draw drawingAnimationPanel() {
-		return null;//A JPanel
-	}
-	
-	/* JPanel pour le joueur qui vise */
-	public Draw drawAimingPanel() {
-		return null;//A JPanel
-	}
-	
-	public void playARound() {
-		
-	}
+	public void increaseRound() {
+		/**Cette fonction est appele lors de la fin d'une manche
+		 *Elle actualise le score du joueur qui a gagne
+		 *Elle check le nombre de round, elle arrete la partie si c'est le dernier
+		 *Elle change un round sur deux le premier joueur de la manche 
+		 */
+		if(this.activePlayer==this.player1) {
+			this.setScorePlayer1(this.getScorePlayer1()+1);
+		}else {
+			this.setScorePlayer2(this.getScorePlayer2()+1);
+		}
+		//On check si c'est le dernier round
+		if (round != ROUNDMAX) {
+		this.round++;
+		//On change un round sur deux le premier joueur de la manche
+		if (0==round%2) {
+			this.setActivePlayer(player2);
+		}else {
+			this.setActivePlayer(player1);
+		}
+		}else {
+			//Sinon la partie est gagne
+			draw.win = true;
+		}
+		}
 	
 	public void changeActivePlayer() {
+		/**
+		 * Cette fonction permet de changer de joueur (Joueur actif)
+		 */
 		if(this.getActivePlayer().equals(this.getPlayer1())) {
 			this.setActivePlayer(this.getPlayer2());
 		} else {
@@ -67,15 +67,12 @@ public class Game {
 		}
 	}
 	
-	public Draw getActiveJPanel() {
-		if(this.getActivePlayer().equals(this.getPlayer1())) {
-			return this.getJPanelPlayer1();
-		} else {
-			return this.getJPanelPlayer2();
-		}
-	}
+
 	
 	public Character getNotActivePlayer() {
+		/**
+		 * Cette fonction permet de recuperer le joueur qui ne joue pas (Joueur qui est vise)
+		 */
 		if(this.getActivePlayer().equals(this.getPlayer1())) {
 			return this.getPlayer2();
 		} else {
@@ -83,38 +80,9 @@ public class Game {
 		}
 	}
 	
-	
-//	public Trajectory getTrajectory() {
-//		return this.trajectory;
-//	}
-//	
-//	public void setTrajectory(Trajectory trajectory) {
-//		this.trajectory = trajectory;
-//	}
-	
-	public Draw getJPanelGame() {
-		return this.JPanelGame;
-	}
-	
-	public void setJPanelGame(Draw JPanelGame) {
-		this.JPanelGame = JPanelGame;
-	}
-	
-	public Draw getJPanelPlayer2() {
-		return this.JPanelPlayer2;
-	}
-	
-	public void setJPanelPlayer2(Draw JPanelPlayer2) {
-		this.JPanelPlayer2 = JPanelPlayer2;
-	}
-	
-	public Draw getJPanelPlayer1() {
-		return this.JPanelPlayer1;
-	}
-	
-	public void setJPanelPlayer1(Draw JPanelPlayer1) {
-		this.JPanelPlayer1 = JPanelPlayer1;
-	}
+	///////////////////////////
+	// ACCESSEURS ET GETTERS //
+	///////////////////////////
 
 	public int getScorePlayer2() {
 		return this.scorePlayer2;
@@ -164,38 +132,5 @@ public class Game {
 		this.round = round;
 	}
 
-	public void win() {
-		this.getActivePlayer();
-	}
-
-	public void increaseRound() {
-		if(this.activePlayer==this.player1) {
-			this.setScorePlayer1(this.getScorePlayer1()+1);
-		}else {
-			this.setScorePlayer2(this.getScorePlayer2()+1);
-		}
-		if (round != ROUNDMAX) {
-		this.round++;
-		if(this.activePlayer==this.player1) {
-			this.setScorePlayer1(this.getScorePlayer1()+1);
-		}else {
-			this.setScorePlayer2(this.getScorePlayer2()+1);
-		}
-		if (0==round%2) {
-			this.setActivePlayer(player2);
-		}else {
-			this.setActivePlayer(player1);
-		}
-		}else {
-			draw.win = true;
-			/*System.out.println(this.getPlayer1().getName()+" : "+this.getScorePlayer1());
-		    System.out.println(this.getPlayer2().getName()+" : "+this.getScorePlayer2());
-			System.out.println("win");*/
-			
-			
-		}
-		
-		
-	}
 	
 }
