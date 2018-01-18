@@ -73,6 +73,23 @@ public class Trajectory {
 		
 	}
 	
+	
+	
+	/**
+	 * 
+	 * Cette fonction renvoie un tableau avec les points calculés de la trajectoire 
+	 * selon les valeurs initiales du tir du joueur
+	 * Elle limite la force des joueurs pour rendre le jeu plus difficile
+	 * Elle calcule  la trajectoire de la parabole
+	 * 
+	 *
+	 *@param x0 position du joueur qui est en train de joué
+	 *@param x1 Abcsisse du premier point de contact du joueur
+	 *@param y1 Ordonne du premier point de contact du joueur
+	 *@param x2 Abscisse du point de relache du joueur
+	 *@param y2 Ordonne du point de relache du joueur
+	 *
+	 */
 	public int[][] calculateTrajectory(float x0,float x1,float x2,float y1,float y2) {
 		//Fonction renvoyant un tableau avec tout les points de la trajectoire 
 		// en fonction des valeurs initiales

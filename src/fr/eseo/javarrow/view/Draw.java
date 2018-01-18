@@ -71,7 +71,7 @@ public class Draw extends JPanel{
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
 		Character character = this.getGame().getPlayer1();
 		Character character2 = this.getGame().getPlayer2();
-		g2D.drawImage(img,0,0,this);
+		g2D.drawImage(img,0,0,this.screenWidth,this.screenHeight,this);
 	    g2D.drawImage(img1, 
 	    		(int)character.getX()-25, 
 	    		(int)character.getY()-100,
