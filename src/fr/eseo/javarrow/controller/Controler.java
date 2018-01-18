@@ -5,10 +5,8 @@ import java.awt.GraphicsEnvironment;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-
 import fr.Trajectory;
 import fr.eseo.javarrow.model.Arrow;
-import fr.eseo.javarrow.model.Game;
 import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
  

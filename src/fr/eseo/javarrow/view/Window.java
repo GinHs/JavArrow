@@ -10,8 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import fr.eseo.javarrow.controller.LaunchGameAction;
-import fr.eseo.javarrow.model.Character;
-import fr.eseo.javarrow.model.Game;
+
 
 /**
  * 
@@ -27,6 +26,9 @@ public class Window extends JFrame{
 	public JTextField pseudo1 = new JTextField("Pseudo1",20);
 	public JTextField pseudo2 = new JTextField("Pseudo2",20);
 	
+	/**
+	 * Construteur de la classe Window
+	 */
 	private Window() {
 		super(TITRE_PAR_DEFAUT);
 		this.setPreferredSize(new Dimension(draw.screenWidth/4,draw.screenHeight/6));

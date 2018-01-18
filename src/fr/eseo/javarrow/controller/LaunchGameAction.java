@@ -3,19 +3,14 @@ package fr.eseo.javarrow.controller;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.io.FileNotFoundException;
-import java.util.List;
 import javax.swing.AbstractAction;
-import javax.swing.JOptionPane;
-
-import fr.eseo.javarrow.model.Character;
-import fr.eseo.javarrow.model.Game;
 import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.Window;
 
 /**
  * Controleur pour la creation d'une partie
  */
+@SuppressWarnings("serial")
 public class LaunchGameAction extends AbstractAction{
 	public static final String NAME_ACTION = "Lancer la partie";
 

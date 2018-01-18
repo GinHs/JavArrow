@@ -1,19 +1,9 @@
 package fr;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.*;
-import java.util.List;
-
-
-import java.util.TimerTask;
-
-import javax.swing.Timer;
 
 import fr.eseo.javarrow.model.Arrow;
 import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
-import fr.eseo.javarrow.view.Window; 
-import fr.eseo.javarrow.model.Game;
+
 /**
  * 
  * La classe Trajectory

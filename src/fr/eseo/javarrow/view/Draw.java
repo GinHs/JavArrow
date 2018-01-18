@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.Stroke;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +19,7 @@ import fr.eseo.javarrow.model.Game;
 /**
  * Panneau d'affichage du jeu
  */
+@SuppressWarnings("serial")
 public class Draw extends JPanel{
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public int screenWidth = dim.width;
@@ -44,6 +44,12 @@ public class Draw extends JPanel{
 	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
 	public boolean win = false; 
 	
+	/**
+	 * Constructeur du panneau d'affichage du jeu
+	 * @param largeur
+	 * @param hauteur
+	 * @param fond
+	 */
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
 		Dimension d = new Dimension(largeur, hauteur);
