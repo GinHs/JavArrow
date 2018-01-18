@@ -76,7 +76,7 @@ public class Draw extends JPanel{
 			}
 		}else{
 			
-		if (game.getRound()%2==1) {
+		if (game.getRound()%2==0) {
 			Image img = Toolkit.getDefaultToolkit().getImage("image/fond.jpg");
 			g2D.drawImage(img,0,0,this.screenWidth,this.screenHeight,this);
 		}else {
