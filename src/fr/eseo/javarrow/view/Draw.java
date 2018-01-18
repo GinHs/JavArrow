@@ -76,13 +76,9 @@ public class Draw extends JPanel{
 			}
 		}else{
 			
-		if (game.getRound()%2==0) {
-			Image img = Toolkit.getDefaultToolkit().getImage("image/fond.jpg");
-			g2D.drawImage(img,0,0,this.screenWidth,this.screenHeight,this);
-		}else {
-			Image img3 = Toolkit.getDefaultToolkit().getImage("image/fond2.jpg");
-			g2D.drawImage(img3,0,0,this.screenWidth,this.screenHeight,this);
-		}
+		Image img = Toolkit.getDefaultToolkit().getImage("image/fond"+game.getRound()+".jpg");
+		g2D.drawImage(img,0,0,this.screenWidth,this.screenHeight,this);
+		
 		
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
