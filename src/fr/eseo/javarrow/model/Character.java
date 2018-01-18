@@ -9,7 +9,6 @@ public class Character {
 	public float x;
 	public float y;
 	public float height;
-	public int score;
 	public float width;
 
 
@@ -26,7 +25,6 @@ public class Character {
 		this.y = y;
 		this.height = height;
 		this.width = width;
-		this.score = 0;
 	}
 	
 	/**
@@ -75,12 +73,4 @@ public class Character {
 		this.height = height;
 	}
 	
-	public int getScore() {
-		return score;
-	}
-	
-	public void setScore(int score) {
-		this.score = score;
-	}
-
 }
