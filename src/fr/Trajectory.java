@@ -16,6 +16,15 @@ public class Trajectory {
 	public float t = 0;
 	public int n = 0;
 	
+	/**
+	 * Constructeur de la classe Trajectory
+	 * @param draw
+	 * @param arrow
+	 * @param x1
+	 * @param x2
+	 * @param y1
+	 * @param y2
+	 */
 	public Trajectory (Draw draw,Arrow arrow,int x1,int x2,int y1,int y2) {
 		this.arrow=arrow;
 		this.draw=draw;

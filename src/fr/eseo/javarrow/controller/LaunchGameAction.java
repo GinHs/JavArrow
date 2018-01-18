@@ -14,6 +14,9 @@ import fr.eseo.javarrow.view.Window;
 public class LaunchGameAction extends AbstractAction{
 	public static final String NAME_ACTION = "Lancer la partie";
 
+	/**
+	 * Constructeur de la classe LaunchGameAction
+	 */
 	public LaunchGameAction() {
 		super(NAME_ACTION);
 	}

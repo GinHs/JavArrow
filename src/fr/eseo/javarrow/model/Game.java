@@ -38,8 +38,8 @@ public class Game {
 	 * Elle change un round sur deux le premier joueur de la manche 
 	 * 
 	 */
+	
 	public void increaseRound() {
-		
 		if(this.activePlayer==this.player1) {
 			this.setScorePlayer1(this.getScorePlayer1()+1);
 		}else {

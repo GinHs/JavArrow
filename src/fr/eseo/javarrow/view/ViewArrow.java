@@ -10,6 +10,10 @@ import fr.eseo.javarrow.model.Arrow;
 public class ViewArrow {
 	protected final Arrow arrow;
 
+	/**
+	 * Constructeur de la vue d'une fleche
+	 * @param arrow
+	 */
 	public ViewArrow(Arrow arrow) {
 		this.arrow = arrow;
 	}
