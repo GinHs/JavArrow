@@ -59,6 +59,7 @@ public class Draw extends JPanel{
 		super.paintComponent(g);
 		
 		Graphics2D g2D = (Graphics2D)g.create();
+		g2D.setColor(new Color(0,0,0));
 		if (win) {
 			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
@@ -99,8 +100,7 @@ public class Draw extends JPanel{
 		
 		for(int i=0;i<vueFormes.size();i++)
 			this.vueFormes.get(i).affiche(g2D);
-		 
-		g2D.setColor(new Color(51,51,51));
+		
 		g2D.drawLine(0,(int)(screenHeight*0.74), screenWidth, (int)(screenHeight*0.74)); 
 		
 		//Qui doit jouer
