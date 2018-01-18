@@ -13,13 +13,19 @@ import fr.eseo.javarrow.model.Game;
 import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.Window;
 
+/**
+ * Controleur pour la creation d'une partie
+ */
 public class LaunchGameAction extends AbstractAction{
 	public static final String NAME_ACTION = "Lancer la partie";
 
 	public LaunchGameAction() {
 		super(NAME_ACTION);
 	}
-
+	/**
+	 * Change le panel associé à la fenetre et récupère les données des JTextField
+	 * Met à jour les pseudos
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		Window window = Window.getInstance();

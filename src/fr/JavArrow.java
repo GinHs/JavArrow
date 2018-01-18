@@ -4,7 +4,12 @@ import javax.swing.SwingUtilities;
 
 import fr.eseo.javarrow.view.Window;
 
-
+/**
+ * 
+ * JavArrow launcher 
+ * @version 0.1
+ *
+ */
 public class JavArrow {
 	public JavArrow () {
 		Window window;

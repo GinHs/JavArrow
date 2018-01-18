@@ -5,10 +5,8 @@ import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-/**
- * 
- * @author corentin
- * Fenetre d'affichage de d�but
+/** 
+ * Panneau d'affichage de debut
  */
 public class DrawBegin  extends JPanel{
 	public static int length = 500;

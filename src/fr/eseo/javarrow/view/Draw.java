@@ -17,7 +17,9 @@ import fr.eseo.javarrow.controller.Controler;
 import fr.eseo.javarrow.model.Character;
 import fr.eseo.javarrow.model.Game;
 
-
+/**
+ * Panneau d'affichage du jeu
+ */
 public class Draw extends JPanel{
 	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
 	public int screenWidth = dim.width;
@@ -50,7 +52,9 @@ public class Draw extends JPanel{
 		super.setVisible(true);
 	}
 	
-		
+		/**
+		 * Création du panneau d'affichage avec les différents éléments
+		 */
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		
@@ -110,6 +114,10 @@ public class Draw extends JPanel{
 	
 	}}
 
+	/**
+	 * Ajoute une vue de flèche à la liste vueFormes
+	 * @param createViewArrow
+	 */
 	public void addView(ViewArrow createViewArrow) {
 		this.vueFormes.clear();
 		this.vueFormes.add(createViewArrow);

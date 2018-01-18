@@ -9,7 +9,11 @@ import fr.eseo.javarrow.view.Draw;
 import fr.eseo.javarrow.view.ViewArrow;
 import fr.eseo.javarrow.view.Window; 
 import fr.eseo.javarrow.model.Game;
-
+/**
+ * 
+ * La classe Trajectory
+ *  
+ */
 public class Trajectory {
 	public Draw draw;
 	public Arrow arrow;
