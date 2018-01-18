@@ -63,9 +63,7 @@ public class Draw extends JPanel{
 		if (win) {
 			Font fonte = new Font("Arial",Font.BOLD,100);
 		    g2D.setFont(fonte);
-		    //System.out.println(game.getPlayer1().getName()+" "+game.getScorePlayer1());
-		    //System.out.println(game.getPlayer2().getHeight()+" "+game.getScorePlayer2());
-			if (game.getScorePlayer1()>game.getScorePlayer2()) {
+		    if (game.getScorePlayer1()>game.getScorePlayer2()) {
 				g2D.drawString(game.getPlayer1().getName()+" a gagne",200,200);
 			}else{
 				g2D.drawString(game.getPlayer2().getName()+" a gagne",200,200);
