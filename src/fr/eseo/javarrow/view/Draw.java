@@ -99,7 +99,7 @@ public class Draw extends JPanel{
 		g2D.setColor(new Color(51,51,51));
 		g2D.drawLine(0,(int)(screenHeight*0.74), screenWidth, (int)(screenHeight*0.74)); 
 		
-		//Qui doit jouer.
+		//Qui doit jouer
 		g2D.drawString("A "+game.getActivePlayer().getName()+" de jouer !", screenWidth/2-(int)(screenWidth*0.10), (int)(screenHeight*0.10));
 		g2D.drawString("ROUND : "+game.getRound(), screenWidth/2-(int)(screenWidth*0.065), (int)(screenHeight*0.05));
 		
