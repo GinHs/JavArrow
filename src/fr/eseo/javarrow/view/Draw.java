@@ -1,11 +1,13 @@
 package fr.eseo.javarrow.view;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Stroke;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class Draw extends JPanel{
 	public int screenHeight = dim.height;
 	public static int height = 500;
 	public static int length = 500;
-	public static Color Color=new Color(255,255,255);
+	public static Color Color = new Color(255,255,255);
 	private Controler controler;
 	
 	public Game game = new Game(this,
@@ -35,45 +37,23 @@ public class Draw extends JPanel{
 					(int)(0.0644*screenHeight),
 					(int)(0.092*screenHeight)));
 	
-	
 	private Character player1 = game.getPlayer1();
 	private Character player2 = game.getPlayer2();
-
+	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
+	public boolean win = false; 
+	
 	public Draw(int largeur,int hauteur, Color fond) {
 		super();
 		Dimension d = new Dimension(largeur, hauteur);
 		super.setPreferredSize(d);
 		super.setBackground(fond);
 		super.setVisible(true);
-		System.out.println(screenWidth+" "+screenHeight);
+	}
+	
 		
-	}
-	
-	public Controler getControler() {
-		return controler;
-	}
-
-	public void setControler(Controler controler) {
-		this.controler = controler;
-	}
-
-	private List <ViewArrow> vueFormes = new ArrayList <ViewArrow>();
-	public boolean win=false; 
-	
-	
-	public List<ViewArrow> getVueFormes() {
-		return vueFormes;
-	}
-
-	public void setVueFormes(List<ViewArrow> vueFormes) {
-		this.vueFormes = vueFormes;
-	}
-	
 	public void paintComponent(Graphics g){ 
 		super.paintComponent(g);
 		
-		
-
 		Graphics2D g2D = (Graphics2D)g.create();
 		if (win) {
 			Font fonte = new Font("Arial",Font.BOLD,100);
@@ -86,10 +66,12 @@ public class Draw extends JPanel{
 				g2D.drawString(game.getPlayer2().getName()+" a gagne",200,200);
 			}
 		}else{
+		Image img = Toolkit.getDefaultToolkit().getImage("image/fond.jpg");
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
 		Character character = this.getGame().getPlayer1();
 		Character character2 = this.getGame().getPlayer2();
+		g2D.drawImage(img,0,0,this);
 	    g2D.drawImage(img1, 
 	    		(int)character.getX()-25, 
 	    		(int)character.getY()-100,
@@ -106,6 +88,7 @@ public class Draw extends JPanel{
 	
 	    Font fonte = new Font("TimesRoman ",Font.BOLD,30);
 	    g2D.setFont(fonte);
+	    g2D.setStroke(new BasicStroke(3.0f));
 
 		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
@@ -132,11 +115,7 @@ public class Draw extends JPanel{
 		this.vueFormes.add(createViewArrow);
 		this.repaint();
 		}
-	
-	public int calculateRelativeLength(int length) {
-		return 0;
-	}
-	
+		
 	public int getScreenWidth() {
 		return this.screenWidth;
 	}
@@ -151,6 +130,22 @@ public class Draw extends JPanel{
 
 	public void setGame(Game game) {
 		this.game = game;
+	}
+	
+	public Controler getControler() {
+		return controler;
+	}
+
+	public void setControler(Controler controler) {
+		this.controler = controler;
+	}
+	
+	public List<ViewArrow> getVueFormes() {
+		return vueFormes;
+	}
+
+	public void setVueFormes(List<ViewArrow> vueFormes) {
+		this.vueFormes = vueFormes;
 	}
 
 	
