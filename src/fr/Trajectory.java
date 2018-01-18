@@ -1,6 +1,11 @@
 package fr;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.List;
+
+
+import java.util.TimerTask;
 
 import javax.swing.Timer;
 
@@ -52,9 +57,11 @@ public class Trajectory {
 			try {
 				Thread.sleep(25);
 			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+		      
+		        
 			//On ajoute la nouvelle vue
 			this.draw.addView(new ViewArrow(arrow));
 			//On actualise le paintcomponent pour afficher correctement la fleche
