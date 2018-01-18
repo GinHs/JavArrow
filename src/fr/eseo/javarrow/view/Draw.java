@@ -65,12 +65,20 @@ public class Draw extends JPanel{
 				g2D.drawString(game.getPlayer2().getName()+" a gagne",200,200);
 			}
 		}else{
-		Image img = Toolkit.getDefaultToolkit().getImage("image/fond.jpg");
+			
+		if (game.getRound()%2==1) {
+			Image img = Toolkit.getDefaultToolkit().getImage("image/fond.jpg");
+			g2D.drawImage(img,0,0,this.screenWidth,this.screenHeight,this);
+		}else {
+			Image img3 = Toolkit.getDefaultToolkit().getImage("image/fond2.jpg");
+			g2D.drawImage(img3,0,0,this.screenWidth,this.screenHeight,this);
+		}
+		
 		Image img1 = Toolkit.getDefaultToolkit().getImage("image/Stickman.png");
 		Image img2 = Toolkit.getDefaultToolkit().getImage("image/Stickman2.png");
 		Character character = this.getGame().getPlayer1();
 		Character character2 = this.getGame().getPlayer2();
-		g2D.drawImage(img,0,0,this.screenWidth,this.screenHeight,this);
+		
 	    g2D.drawImage(img1, 
 	    		(int)character.getX()-25, 
 	    		(int)character.getY()-100,
@@ -92,9 +100,8 @@ public class Draw extends JPanel{
 		g2D.drawString(player1.getName(), player1.getX()-10, player1.getY() - 110);
 		g2D.drawString(player2.getName(), player2.getX()-20, player2.getY() - 110);
 		
-		for(int i=0;i<vueFormes.size();i++)
-			this.vueFormes.get(i).affiche(g2D);
 		
+		refresh(g);
 		g2D.drawLine(0,(int)(screenHeight*0.74), screenWidth, (int)(screenHeight*0.74)); 
 		
 		//Qui doit jouer
@@ -108,6 +115,12 @@ public class Draw extends JPanel{
 	
 	}}
 
+	public void refresh(Graphics g) {
+		Graphics2D g2D = (Graphics2D)g.create();
+		for(int i=0;i<vueFormes.size();i++)
+			this.vueFormes.get(i).affiche(g2D);
+		
+	}
 	public void addView(ViewArrow createViewArrow) {
 		this.vueFormes.clear();
 		this.vueFormes.add(createViewArrow);

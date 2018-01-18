@@ -6,6 +6,8 @@ import fr.eseo.javarrow.view.Window;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 import fr.Trajectory;
 
@@ -28,6 +30,7 @@ public class Game {
 		this.setRound(1);
 		this.setScorePlayer1(0);
 		this.setScorePlayer2(0);
+		
 	}
 	
 	public void increaseRound() {
@@ -45,9 +48,12 @@ public class Game {
 		if (round != ROUNDMAX) {
 		this.round++;
 		//On change un round sur deux le premier joueur de la manche
+		
 		if (0==round%2) {
+			
 			this.setActivePlayer(player2);
 		}else {
+		
 			this.setActivePlayer(player1);
 		}
 		}else {

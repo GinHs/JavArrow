@@ -1,13 +1,5 @@
 package fr;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.*;
-import java.util.List;
 
-
-import java.util.TimerTask;
-
-import javax.swing.Timer;
 
 import fr.eseo.javarrow.model.Arrow;
 import fr.eseo.javarrow.view.Draw;
@@ -36,6 +28,7 @@ public class Trajectory {
 	 * 
 	 * Cette fonction affiche la trajectoire selon les valeurs initiales du tir du joueur
 	 * Elle appelle la fonction @see calculateTrajectory et affiche ensuite le tableau
+	 * avec une pause a chaque fois de 25ms
 	 *
 	 *@param pos position du joueur qui est en train de joué
 	 *@param x1 Abcsisse du premier point de contact du joueur
@@ -60,12 +53,15 @@ public class Trajectory {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		      
-		        
-			//On ajoute la nouvelle vue
+			
+
 			this.draw.addView(new ViewArrow(arrow));
+			//this.draw.repaint();
+
+			//On ajoute la nouvelle vue
+			
 			//On actualise le paintcomponent pour afficher correctement la fleche
-			this.draw.paintComponent(this.draw.getGraphics());
+			this.draw.refresh(this.draw.getGraphics());
 			j++;
 		}
 		
