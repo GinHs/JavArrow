@@ -87,7 +87,7 @@ public class Game {
 	}
 	
 	///////////////////////////
-	// ACCESSEURS ET GETTERS //
+	// ACCESSEURS ET MUTATEURS //
 	///////////////////////////
 
 	public int getScorePlayer2() {
